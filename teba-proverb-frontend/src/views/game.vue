@@ -1,17 +1,14 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import proverbContainer from "@/components/proverb-container";
-import proverbApi from "../api/proverb.api";
+import proverbApi from "../api/api-proverb.ts";
+import { ProverbGame } from "../services/proverb-game.service.ts";
+import proverbContainer from "../components/proverb-container.vue";
+import letterDiscover from "../components/letter-discover/letter-discover.vue";
 
-const tries = ref(3);
-const textToTry = ref("");
-const label = "Adivina el refrán";
-const placeholder = `intentos restantes ${tries.value}`;
 const proverb = proverbApi.getProverb();
-
-function userTry() {
-  tries.value = tries.value--;
-}
+const game = new ProverbGame();
+const textToTry = ref("");
+const placeholder = `intentos restantes ${game.tries}`;
 </script>
 
 <template>
@@ -20,15 +17,16 @@ function userTry() {
       <proverb-container :proverb="proverb" />
     </v-col>
     <v-col cols="12">
-      <div class="ma-4">
+      <div v-if="game.lettersSelected" class="ma-4">
         <v-text-field
           v-model="textToTry"
-          :label="label"
+          label="Adivina el refrán"
           :placeholder="placeholder"
           variant="solo-filled"
           append-inner-icon="mdi-send"
         />
       </div>
+      <letter-discover v-else />
     </v-col>
   </v-row>
 </template>
