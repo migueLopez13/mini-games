@@ -1,32 +1,25 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import proverbApi from "../api/api-proverb.ts";
-import { ProverbGame } from "../services/proverb-game.service.ts";
+import { onMounted } from "vue";
+import ProverbGame from "../services/proverb-game.service.ts";
 import proverbContainer from "../components/proverb-container.vue";
-import letterDiscover from "../components/letter-discover/letter-discover.vue";
+import letterDiscover from "../components/letter-discover.vue";
+import triesInput from "../components/tries-input.vue";
+import gameDialog from "../components/game-dialog.vue";
 
-const proverb = proverbApi.getProverb();
-const game = new ProverbGame();
-const textToTry = ref("");
-const placeholder = `intentos restantes ${game.tries}`;
+onMounted(async () => {
+  await ProverbGame.startGame(); // <div>
+});
 </script>
 
 <template>
   <v-row>
-    <v-col cols="12">
-      <proverb-container :proverb="proverb" />
+    <v-col cols="12" class="d-flex justify-center">
+      <proverb-container />
     </v-col>
     <v-col cols="12">
-      <div v-if="game.lettersSelected" class="ma-4">
-        <v-text-field
-          v-model="textToTry"
-          label="Adivina el refrán"
-          :placeholder="placeholder"
-          variant="solo-filled"
-          append-inner-icon="mdi-send"
-        />
-      </div>
+      <tries-input v-if="ProverbGame.lettersSelected.value.length > 4" />
       <letter-discover v-else />
     </v-col>
+    <game-dialog v-if="ProverbGame.gameIsFinished.value" />
   </v-row>
 </template>
