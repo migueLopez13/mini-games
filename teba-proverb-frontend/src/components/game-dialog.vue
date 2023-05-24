@@ -9,15 +9,15 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from "vue";
-import { gameOver, gameWinner } from "../constants/text";
-import ProverbGame from "../services/proverb-game.service.ts";
+import { computed, ref } from 'vue'
+import { gameOver, gameWinner } from '../constants/text'
+import ProverbGame from '../services/proverb-game.service.ts'
 
 const message = computed(() => {
-  return ProverbGame.tries.value ? gameWinner : gameOver;
-});
+  return ProverbGame.tries.value ? gameWinner : gameOver
+})
 
-const showDialog = ref<boolean>(true);
+const showDialog = ref<boolean>(true)
 </script>
 
 <style lang="scss" scoped></style>

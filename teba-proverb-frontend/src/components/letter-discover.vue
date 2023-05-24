@@ -32,40 +32,40 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ref } from "vue";
-import ProverbGame from "../services/proverb-game.service.ts";
-import { letters, infoText } from "../constants/text";
+import { ref } from 'vue'
+import ProverbGame from '../services/proverb-game.service.ts'
+import { letters, infoText } from '../constants/text'
 
-document.addEventListener("keydown", handleKeydown);
+document.addEventListener('keydown', handleKeydown)
 
-const keyboardLetters = ref(letters.split(""));
-const letterSelected = ref("");
+const keyboardLetters = ref(letters.split(''))
+const letterSelected = ref('')
 
 function handleKeydown(event) {
   if (ProverbGame.lettersSelected.value.length === 5) {
-    return;
+    return
   }
-  if (event.key === "Enter" && letterSelected.value) {
-    sendSelectedLetter();
+  if (event.key === 'Enter' && letterSelected.value) {
+    sendSelectedLetter()
   }
 
   if (
     !letters.includes(event.key) ||
     ProverbGame.lettersSelected.value.includes(event.key)
   ) {
-    return;
+    return
   }
 
-  selectLetter(event.key);
+  selectLetter(event.key)
 }
 
 function selectLetter(letter: string) {
-  letterSelected.value = letter;
+  letterSelected.value = letter
 }
 
 function sendSelectedLetter() {
-  ProverbGame.discoverLetter(letterSelected.value);
-  letterSelected.value = "";
+  ProverbGame.discoverLetter(letterSelected.value)
+  letterSelected.value = ''
 }
 </script>
 

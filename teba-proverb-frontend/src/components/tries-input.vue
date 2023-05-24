@@ -35,23 +35,23 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from "vue";
-import { guessTheSaying } from "../constants/text";
-import ProverbGame from "../services/proverb-game.service.ts";
+import { computed, ref } from 'vue'
+import { guessTheSaying } from '../constants/text'
+import ProverbGame from '../services/proverb-game.service.ts'
 
-const textToTry = ref<string>("");
-const error = ref<boolean>(false);
+const textToTry = ref<string>('')
+const error = ref<boolean>(false)
 
 const placeholder = computed(() => {
-  return `Intentos restantes ${ProverbGame.tries.value}`;
-});
+  return `Intentos restantes ${ProverbGame.tries.value}`
+})
 
 function handleUserTry() {
-  ProverbGame.userTry(textToTry.value);
+  ProverbGame.userTry(textToTry.value)
 
   if (!ProverbGame.gameIsFinished.value) {
-    textToTry.value = "";
-    error.value = true;
+    textToTry.value = ''
+    error.value = true
   }
 }
 </script>
