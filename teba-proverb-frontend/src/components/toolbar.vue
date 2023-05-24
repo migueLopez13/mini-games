@@ -12,10 +12,10 @@
 </template>
 
 <script setup lang="ts">
-import ProverbGame from "../services/proverb-game.service.ts";
-import { pageTitle } from "../constants/text.ts";
+import ProverbGame from '../services/proverb-game.service.ts'
+import { pageTitle } from '../constants/text.ts'
 
 async function restartGame() {
-  await ProverbGame.startGame();
+  await ProverbGame.startGame()
 }
 </script>

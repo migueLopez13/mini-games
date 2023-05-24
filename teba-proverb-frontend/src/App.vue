@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import game from "./views/game.vue";
-import toolbar from "./components/toolbar.vue";
+import game from './views/game.vue'
+import toolbar from './components/toolbar.vue'
 </script>
 
 <template>

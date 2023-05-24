@@ -1,11 +1,11 @@
-export type keyboardLetter = {
-  value: string;
-  selected: boolean;
-};
+export interface keyboardLetter {
+  value: string
+  selected: boolean
+}
 
-export type proverbLetter = {
-  value: string;
-  hide: boolean;
-};
+export interface proverbLetter {
+  value: string
+  hide: boolean
+}
 
-export type proverbWord = Array<proverbLetter>;
+export type proverbWord = proverbLetter[]

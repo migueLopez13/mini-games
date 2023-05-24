@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ProverbGame from "../services/proverb-game.service.ts";
+import ProverbGame from '../services/proverb-game.service.ts'
 </script>
 
 <template>
