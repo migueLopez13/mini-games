@@ -1,20 +1,20 @@
 import { ref } from 'vue'
-import { proverbWord } from '../types/types.ts'
+import { type proverbWord } from '../types/types.ts'
 import proverbApi from '../api/api-proverb.ts'
 
-function matrixFromProverb(proverb): Array<proverbWord> {
+function matrixFromProverb(proverb): proverbWord[] {
   return proverb
     .split(' ')
     .map(word => word.split('').map(letter => ({ value: letter, hide: true })))
 }
 
 class ProverbGame {
-  private proverb = ref<string>('')
-  private _gameIsFinished = ref<boolean>(false)
+  private readonly proverb = ref<string>('')
+  private readonly _gameIsFinished = ref<boolean>(false)
 
   public tries = ref<number>(4)
   public lettersSelected = ref<string[]>([])
-  public proverbMatrix = ref<Array<proverbWord>>()
+  public proverbMatrix = ref<proverbWord[]>()
 
   constructor() {}
 
