@@ -1,3 +1,17 @@
+export interface keyboardLetter {
+  value: string
+  selected: boolean
+}
+
+export interface proverbLetter {
+  value: string
+  hide: boolean
+}
+
+export type proverbWord = proverbLetter[]
+
+export type proverb = proverbWord[]
+
 export const pageTitle = 'Refranero de teba'
 export const letters = 'qwertyuiopasdfghjklñzxcvbnm'
 export const infoText = 'Descubre 5 letras:'

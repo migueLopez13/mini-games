@@ -10,8 +10,9 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { gameOver, gameWinner } from '../constants/text'
-import ProverbGame from '../services/proverb-game.service.ts'
+
+import ProverbGame from '../game-service.ts'
+import { gameWinner, gameOver } from '../definitions'
 
 const message = computed(() => {
   return ProverbGame.tries.value ? gameWinner : gameOver

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import ProverbGame from '../services/proverb-game.service.ts'
-import proverbContainer from '../components/proverb-container.vue'
-import letterDiscover from '../components/letter-discover.vue'
-import triesInput from '../components/tries-input.vue'
-import gameDialog from '../components/game-dialog.vue'
+import ProverbGame from './game-service.ts'
+import proverbContainer from './components/proverb-container.vue'
+import letterDiscover from './components/letter-discover.vue'
+import triesInput from './components/tries-input.vue'
+import gameDialog from './components/game-dialog.vue'
 
 onMounted(async () => {
   await ProverbGame.startGame() // <div>

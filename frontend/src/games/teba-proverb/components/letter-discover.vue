@@ -33,8 +33,8 @@
 </template>
 <script setup lang="ts">
 import { ref } from 'vue'
-import ProverbGame from '../services/proverb-game.service.ts'
-import { letters, infoText } from '../constants/text'
+import ProverbGame from '../game-service.ts'
+import { letters, infoText } from '../definitions.ts'
 
 document.addEventListener('keydown', handleKeydown)
 

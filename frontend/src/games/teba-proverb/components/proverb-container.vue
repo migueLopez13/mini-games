@@ -1,17 +1,17 @@
-<script setup lang="ts">
-import ProverbGame from '../services/proverb-game.service.ts'
-</script>
-
 <template>
   <div class="proverb-wrapper">
-    <div v-for="word in ProverbGame.proverbMatrix.value" class="word">
+    <div
+      v-for="(word, wordIndex) in ProverbGame.proverbMatrix.value"
+      class="word"
+      :key="wordIndex"
+    >
       <v-btn
         v-for="(letter, index) in word"
+        :key="index"
         :text="letter.hide ? '?' : letter.value"
         :ripple="false"
-        class="pa-0"
         style="cursor: default"
-        :class="{ 'mr-8': index === word.length - 1 }"
+        :class="{ 'mr-8': index === word.length - 1, 'pa-0': true }"
         size="large"
         rounded="0"
         elevation="0"
@@ -20,6 +20,10 @@ import ProverbGame from '../services/proverb-game.service.ts'
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import ProverbGame from '../game-service.ts'
+</script>
 
 <style>
 .proverb-wrapper {
