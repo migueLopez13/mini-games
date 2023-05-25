@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import game from './games/teba-proverb/game-view.vue'
-import toolbar from './components/toolbar.vue'
+import appToolbar from './components/app-toolbar.vue'
 </script>
 
 <template>
   <v-layout class="flex-column">
-    <toolbar />
+    <app-toolbar />
     <v-main>
       <game />
     </v-main>

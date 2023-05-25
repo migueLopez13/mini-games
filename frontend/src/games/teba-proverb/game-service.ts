@@ -24,7 +24,7 @@ class ProverbGame {
     )
   }
 
-  async getProverb(): Promise<void> {
+  private async getProverb(): Promise<void> {
     const proverbList = await fetch('./mock/proverb-list.json')
       .then(async response => await response.json())
       .then(data => data)

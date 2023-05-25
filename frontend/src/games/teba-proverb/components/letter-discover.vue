@@ -1,28 +1,28 @@
 <template>
-  <div class="d-flex flex-column align-center">
-    <div class="information-text">
-      <v-icon icon="mdi-information-slab-circle-outline" color="blue" />
-      <div class="text-medium-emphasis">
-        {{ infoText }}
-      </div>
+  <div class="letter-discover-container">
+    <div class="information-text info">
+      <v-icon icon="mdi-information-slab-circle-outline" color="accent" />
+      {{ infoText }}
     </div>
-    <div class="d-flex keyboard-container">
-      <div class="letter-discover-keyboard">
+
+    <div class="keyboard-container">
+      <div class="d-flex flex-wrap justify-center align-center">
         <v-btn
           v-for="letter in keyboardLetters"
           :text="letter"
-          size="small"
           rounded="0"
-          :color="letter === letterSelected ? 'green' : 'grey'"
+          :color="letter === letterSelected ? 'primary' : 'grey'"
           :disabled="ProverbGame.lettersSelected.value.includes(letter)"
           @click="selectLetter(letter)"
         />
       </div>
+
       <v-btn
-        size="x-small"
-        rounded="0"
-        color="blue"
-        height="90px"
+        size="small"
+        rounded="10"
+        color="accent"
+        height="110px"
+        class="primary--text"
         :disabled="!letterSelected"
         @click="sendSelectedLetter"
       >
@@ -59,7 +59,7 @@ function handleKeydown(event) {
   selectLetter(event.key)
 }
 
-function selectLetter(letter: string) {
+function selectLetter(letter: string): void {
   letterSelected.value = letter
 }
 
@@ -69,25 +69,18 @@ function sendSelectedLetter() {
 }
 </script>
 
-<style scoped>
-.information-text {
-  width: 590px;
-  padding: 10px;
-  display: flex;
-  gap: 2px;
-  align-items: center;
-}
-.keyboard-container {
-  display: flex;
-  flex-wrap: no-wrap;
-  justify-content: center;
-}
+<style scoped lang="scss">
+.letter-discover-container {
+  width: 720px;
+  .information-text {
+    padding-bottom: 10px;
+    display: flex;
+    gap: 2px;
+    align-items: center;
+  }
 
-.letter-discover-keyboard {
-  width: 515px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1px;
+  .keyboard-container {
+    display: flex;
+  }
 }
 </style>

@@ -1,0 +1,34 @@
+
+@font-face {
+    font-family: 'Chela-one';
+    src: url("../../public/ChelaOne-Regular.ttf") format("truetype");
+}
+
+:root{
+    --primary-color: #086788;
+    --secondary-color: #06aed5;
+    --accent-color: #F0C808;
+    --base-color: #eefcff;
+}
+
+body{
+    background-color: var(--base-color);
+}
+
+.title{
+    font-family: "Chela-one", Arial, sans-serif ;
+    font-size: 3.5rem;
+    color: var(--accent-color);
+}
+
+.subtitle{
+    font-family: "Chela-one", Arial, sans-serif ;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.info{
+    font-family: "Chela-one", Arial, sans-serif ;
+    font-size: 1.3rem;
+    color: var(--accent-color);
+}

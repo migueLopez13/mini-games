@@ -1,15 +1,17 @@
 <template>
   <v-row>
     <v-col cols="12" class="d-flex justify-center">
-      <div class="tries-input-wrapper d-flex">
-        Letras descubiertas:
+      <div class="tries-input-wrapper d-flex align-center">
+        <div class="subtitle mr-2">Letras descubiertas:</div>
 
-        <div v-for="letter in ProverbGame.lettersSelected.value" class="mx-1">
-          <v-chip size="small" variant="elevated" color="orange-darken-3">
-            <div class="discovered-letter">
-              {{ letter.toUpperCase() }}
-            </div>
-          </v-chip>
+        <div
+          v-for="(letter, index) in ProverbGame.lettersSelected.value"
+          :key="index"
+          class="mx-1"
+        >
+          <v-btn icon size="small" color="accent">
+            {{ letter.toUpperCase() }}
+          </v-btn>
         </div>
       </div>
     </v-col>

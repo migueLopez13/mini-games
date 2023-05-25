@@ -18,6 +18,17 @@ export default createVuetify({
     },
   },
   theme: {
-    defaultTheme: 'light',
+    defaultTheme: 'customTheme',
+    themes: {
+      customTheme: {
+        dark: false,
+        colors: {
+          background: '#FFFFFF',
+          primary: '#086788',
+          secondary: '#06aed5',
+          accent: '#F0C808',
+        },
+      },
+    },
   },
 })
