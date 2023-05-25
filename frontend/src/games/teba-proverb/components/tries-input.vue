@@ -36,8 +36,8 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { guessTheSaying } from '../constants/text'
-import ProverbGame from '../services/proverb-game.service.ts'
+import { guessTheSaying } from '../definitions.ts'
+import ProverbGame from '../game-service.ts'
 
 const textToTry = ref<string>('')
 const error = ref<boolean>(false)

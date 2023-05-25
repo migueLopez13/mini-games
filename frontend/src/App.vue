@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import game from './views/game.vue'
+import game from './games/teba-proverb/game-view.vue'
 import toolbar from './components/toolbar.vue'
 </script>
 

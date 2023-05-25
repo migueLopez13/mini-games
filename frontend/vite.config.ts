@@ -1,7 +1,6 @@
-import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-
 import { fileURLToPath, URL } from 'node:url'
+import { defineConfig } from 'vite'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineConfig({
@@ -9,7 +8,6 @@ export default defineConfig({
     vue({ template: transformAssetUrls }),
     vuetify({
       autoImport: true,
-      styles: { configFile: 'src/styles/settings.scss' },
     }),
   ],
   server: { port: 3030 },

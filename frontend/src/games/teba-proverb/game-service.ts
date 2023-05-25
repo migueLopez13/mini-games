@@ -1,8 +1,7 @@
-import { ref } from 'vue'
-import { type proverbWord } from '../types/types.ts'
-import proverbApi from '../api/api-proverb.ts'
+import { type Ref, ref } from 'vue'
+import type { proverb } from './definitions.js'
 
-function matrixFromProverb(proverb): proverbWord[] {
+function matrixFromProverb(proverb: string): proverb {
   return proverb
     .split(' ')
     .map(word => word.split('').map(letter => ({ value: letter, hide: true })))
@@ -14,11 +13,9 @@ class ProverbGame {
 
   public tries = ref<number>(4)
   public lettersSelected = ref<string[]>([])
-  public proverbMatrix = ref<proverbWord[]>()
+  public proverbMatrix = ref<proverb>()
 
-  constructor() {}
-
-  private showProverb() {
+  private showProverb(): void {
     this.proverbMatrix.value = this.proverbMatrix.value.map(word =>
       word.map(letter => ({
         ...letter,
@@ -27,16 +24,24 @@ class ProverbGame {
     )
   }
 
-  async startGame() {
-    const saying = await proverbApi.getProverb()
-    this.proverb.value = saying
-    this.proverbMatrix.value = matrixFromProverb(saying)
+  async getProverb(): Promise<void> {
+    const proverbList = await fetch('./mock/proverb-list.json')
+      .then(async response => await response.json())
+      .then(data => data)
+
+    this.proverb.value =
+      proverbList[Math.floor(Math.random() * proverbList.length)]
+  }
+
+  async startGame(): Promise<void> {
+    await this.getProverb()
+    this.proverbMatrix.value = matrixFromProverb(this.proverb.value)
     this.lettersSelected.value = []
     this.tries.value = 4
     this._gameIsFinished.value = false
   }
 
-  discoverLetter(letterToDiscover) {
+  discoverLetter(letterToDiscover: string): void {
     this.lettersSelected.value.push(letterToDiscover)
 
     this.proverbMatrix.value = this.proverbMatrix.value.map(word =>
@@ -47,21 +52,25 @@ class ProverbGame {
     )
   }
 
-  userTry(proverbTried): void {
-    if (
+  private isProverbCorrect(proverbTried: string): boolean {
+    return (
       proverbTried.trim().toLowerCase() ===
       this.proverb.value.trim().toLowerCase()
-    ) {
+    )
+  }
+
+  userTry(proverbTried: string): void {
+    if (proverbTried === '') return
+    if (this.isProverbCorrect(proverbTried)) {
       this.showProverb()
       this.gameIsFinished.value = true
     }
-
     this.tries.value--
 
-    if (!this.tries.value) this.gameIsFinished.value = true
+    if (this.tries.value === 0) this.gameIsFinished.value = true
   }
 
-  get gameIsFinished() {
+  get gameIsFinished(): Ref<boolean> {
     return this._gameIsFinished
   }
 }
