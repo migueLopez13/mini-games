@@ -33,7 +33,7 @@ import gameDialog from './components/game-dialog.vue'
 import { pageTitle } from './definitions.ts'
 
 onMounted(async () => {
-  await ProverbGame.startGame() // <div>
+  await ProverbGame.startGame()
 })
 
 const restartGame = async () => {
