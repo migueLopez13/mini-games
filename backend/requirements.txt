@@ -1,2 +1,5 @@
-Django>=3.2
-mysqlclient>=2.0.3
+Django
+mysqlclient
+djangorestframework
+django-simple-history
+django-environ
