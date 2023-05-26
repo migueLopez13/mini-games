@@ -18,6 +18,7 @@
       </div>
 
       <v-btn
+        ref="submit"
         size="small"
         rounded="10"
         color="accent"
@@ -40,12 +41,19 @@ document.addEventListener('keydown', handleKeydown)
 
 const keyboardLetters = ref(letters.split(''))
 const letterSelected = ref('')
+const submit = ref<HTMLElement>(null)
+
+function blurRestartBtn() {
+  const focused = document.activeElement
+  if (focused instanceof HTMLElement && focused.id === 'restart') focused.blur()
+}
 
 function handleKeydown(event) {
   if (ProverbGame.lettersSelected.value.length === 5) {
     return
   }
   if (event.key === 'Enter' && letterSelected.value) {
+    blurRestartBtn()
     sendSelectedLetter()
   }
 

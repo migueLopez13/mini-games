@@ -42,6 +42,7 @@ class ProverbGame {
   }
 
   discoverLetter(letterToDiscover: string): void {
+    if (this.lettersSelected.value.includes(letterToDiscover)) return
     this.lettersSelected.value.push(letterToDiscover)
 
     this.proverbMatrix.value = this.proverbMatrix.value.map(word =>
