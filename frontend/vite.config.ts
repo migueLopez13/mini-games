@@ -10,7 +10,7 @@ export default defineConfig({
       autoImport: true,
     }),
   ],
-  server: { port: 3030 },
+  server: { port: 8080, host: true },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
