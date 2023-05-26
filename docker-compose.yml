@@ -7,4 +7,33 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./node_modules
+      - /node_modules
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    depends_on:
+      - database
+    environment:
+      DB_HOST: database
+      DB_PORT: 3306
+      DB_NAME: mydatabase
+      DB_USER: root
+      DB_PASSWORD: mypassword
+    command: bash -c "python minigamesbackend/manage.py makemigrations && python minigamesbackend/manage.py migrate && python minigamesbackend/manage.py runserver 0.0.0.0:8001"
+
+  database:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mypassword
+      MYSQL_DATABASE: mydatabase
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+  db-data:
