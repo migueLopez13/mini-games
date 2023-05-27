@@ -10,6 +10,7 @@ services:
       - 8080:8080
     volumes:
       - /node_modules
+      - ./frontend/src:/frontend/src
 
   backend:
     build:
