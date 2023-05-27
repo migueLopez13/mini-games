@@ -9,5 +9,5 @@ def proverb_api_view(request):
 
         proverbs = Proverb.objects.all()
         proverb = random.choice(proverbs)
-        proverb_serializer = ProverbSerializer(proverbs)
+        proverb_serializer = ProverbSerializer(proverb)
         return Response(proverb_serializer.data)

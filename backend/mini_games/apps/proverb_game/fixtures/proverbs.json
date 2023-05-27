@@ -1,0 +1,22 @@
+[
+  {
+    "model": "proverb_game.proverb",
+    "pk": "1",
+    "fields": {
+      "proverb": "a quien madruga dios le ayuda",
+      "description": "si te despiertas temprano pasan cosas buenas",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "pk": "2",
+    "fields": {
+      "proverb": "mas vale pajaro en mano que ciento volando",
+      "description": "no seas avaricioso",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  }
+]
