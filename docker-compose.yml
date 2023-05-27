@@ -21,6 +21,8 @@ services:
     depends_on:
       - database
     command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8001"
+    volumes:
+      - ./backend:/app
 
   database:
     image: mysql:latest
@@ -30,10 +32,6 @@ services:
       MYSQL_PASSWORD: 1234
       MYSQL_ROOT_PASSWORD: toor
       MYSQL_DATABASE: proverb_game
-    volumes:
-      - db-data:/var/lib/mysql
+
     ports:
       - 3306:3306
-
-volumes:
-  db-data:
