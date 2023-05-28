@@ -25,12 +25,7 @@ class ProverbGame {
   }
 
   private async getProverb(): Promise<void> {
-    const proverbList = await fetch('http://localhost:8001/api/proverbs/', {
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      }
-    })
+    const proverbList = await fetch('http://localhost:8001/api/proverbs/')
       .then(async response => await response.json())
       .then(data => data)
 
