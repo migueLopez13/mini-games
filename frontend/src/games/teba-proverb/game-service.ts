@@ -19,13 +19,18 @@ class ProverbGame {
     this.proverbMatrix.value = this.proverbMatrix.value.map(word =>
       word.map(letter => ({
         ...letter,
-        hide: false,
+        hide: false
       }))
     )
   }
 
   private async getProverb(): Promise<void> {
-    const proverbList = await fetch('./mock/proverb-list.json')
+    const proverbList = await fetch('http://localhost:8001/api/proverbs/', {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      }
+    })
       .then(async response => await response.json())
       .then(data => data)
 
@@ -48,7 +53,7 @@ class ProverbGame {
     this.proverbMatrix.value = this.proverbMatrix.value.map(word =>
       word.map(letter => ({
         ...letter,
-        hide: !this.lettersSelected.value.includes(letter.value),
+        hide: !this.lettersSelected.value.includes(letter.value)
       }))
     )
   }

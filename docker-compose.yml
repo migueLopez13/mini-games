@@ -33,6 +33,8 @@ services:
       MYSQL_PASSWORD: 1234
       MYSQL_ROOT_PASSWORD: toor
       MYSQL_DATABASE: proverb_game
+    volumes:
+      - /var/lib/mysql
 
     ports:
       - 3306:3306
