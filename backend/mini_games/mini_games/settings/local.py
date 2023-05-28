@@ -23,3 +23,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8080',  # Add the URL of your frontend application
+]
