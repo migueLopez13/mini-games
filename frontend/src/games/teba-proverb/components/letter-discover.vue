@@ -1,6 +1,6 @@
 <template>
   <div class="letter-discover-container">
-    <div class="information-text info">
+    <div class="information-text info text">
       <v-icon icon="mdi-information-slab-circle-outline" color="accent" />
       {{ infoText }}
     </div>
@@ -11,6 +11,7 @@
           v-for="letter in keyboardLetters"
           :text="letter"
           rounded="0"
+          class="text"
           :color="letter === letterSelected ? 'primary' : 'grey'"
           :disabled="ProverbGame.lettersSelected.value.includes(letter)"
           @click="selectLetter(letter)"

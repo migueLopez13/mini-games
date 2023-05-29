@@ -12,29 +12,38 @@
         :ripple="false"
         style="cursor: default"
         :class="{
-          'mr-8': index === word.length - 1,
-          'pa-0': true,
+          'letter pa-0': true,
           'first-btn': isFirst(index, word.length),
           'last-btn': isLast(index, word.length),
-          'solo-btn': word.length === 1,
+          'solo-btn': word.length === 1
         }"
-        size="large"
+        :style="{ 'font-size': display.xs.value ? '1rem' : '1.2rem' }"
+        :size="display.xs.value ? 'small' : 'large'"
         rounded="0"
         elevation="0"
-        :color="letter.hide ? 'secondary' : 'green-lighten-1'"
+        :color="getLetterColor(letter)"
       />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useDisplay } from 'vuetify'
 import ProverbGame from '../game-service.ts'
+import { marks, proverbLetter } from '../definitions'
+
+const display = useDisplay()
 
 const isFirst = (index: number, wordLength: number) =>
   wordLength === 1 ? false : index === 0
 
 const isLast = (index: number, wordLength: number) =>
   wordLength === 1 ? false : index === wordLength - 1
+
+const getLetterColor = (letter: proverbLetter) => {
+  if (marks.includes(letter.value)) return 'accent'
+  return letter.hide ? 'secondary' : 'green-lighten-1'
+}
 </script>
 
 <style lang="scss">
@@ -49,6 +58,8 @@ const isLast = (index: number, wordLength: number) =>
 }
 .word {
   width: max-content;
+  display: flex;
+  flex-wrap: nowrap;
 
   .first-btn {
     border-radius: 20rem 0rem 0rem 20rem !important;
@@ -60,6 +71,10 @@ const isLast = (index: number, wordLength: number) =>
 
   .solo-btn {
     border-radius: 20rem !important;
+  }
+
+  .letter {
+    font-size: 1.5rem;
   }
 }
 </style>

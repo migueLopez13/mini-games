@@ -4,6 +4,11 @@
     src: url("/ChelaOne-Regular.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: 'Fjalla-One';
+    src: url("/FjallaOne-Regular.ttf") format("truetype");
+}
+
 :root{
     --primary-color: #086788;
     --secondary-color: #06aed5;
@@ -27,8 +32,18 @@ body{
     color: var(--primary-color);
 }
 
-.info{
-    font-family: "Chela-one", Arial, sans-serif ;
+.text{
+    font-family: "Fjalla-One", Arial, sans-serif ;
     font-size: 1.3rem;
+}
+
+.info{
+    letter-spacing: 1px;
     color: var(--accent-color);
+}
+
+.primary-text{
+    color: var(--primary-color);
+    font-style: italic;
+    font-weight: 700;
 }

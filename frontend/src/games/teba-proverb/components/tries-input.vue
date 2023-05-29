@@ -22,6 +22,7 @@
           v-model="textToTry"
           :label="guessTheSaying"
           :placeholder="placeholder"
+          autofocus
           variant="solo-filled"
           :error="error"
           :disabled="ProverbGame.gameIsFinished.value"
@@ -50,6 +51,8 @@ const placeholder = computed(() => {
 
 function handleUserTry() {
   ProverbGame.userTry(textToTry.value)
+
+  if (ProverbGame.tries.value === 4) return
 
   if (!ProverbGame.gameIsFinished.value) {
     textToTry.value = ''

@@ -1,9 +1,8 @@
 [
   {
     "model": "proverb_game.proverb",
-    "pk": "1",
     "fields": {
-      "proverb": "a quien madruga dios le ayuda",
+      "proverb": "A quien madruga dios le ayuda",
       "description": "si te despiertas temprano pasan cosas buenas",
       "created_at": "2013-03-16 17:41:28",
       "updated_at": "2013-03-16 17:41:28"
@@ -11,10 +10,180 @@
   },
   {
     "model": "proverb_game.proverb",
-    "pk": "2",
     "fields": {
-      "proverb": "mas vale pajaro en mano que ciento volando",
+      "proverb": "Mas vale pajaro en mano que ciento volando",
       "description": "no seas avaricioso",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "De tal palo, tal astilla",
+      "description": "Padre e hijo suelen ser similares",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Al mal tiempo, buena cara",
+      "description": "ante las adversidades debemos tener una actitud positiva",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "A llorar a la lloreria",
+      "description": "Que vayan a contar sus penas a otro",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "No es oro todo lo que reluce",
+      "description": "Algo que parece muy bueno puede no serlo si se conoce en profundidad",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "A la tercera va la vencida",
+      "description": "No debemos desistir en nuestros intentos por perseverar",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Más vale prevenir que curar",
+      "description": "Tomar precauciones es una forma inteligente de evitar males mayores",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Más vale tarde que nunca",
+      "description": "Es mejor haber alcanzado un propósito más tarde de lo previsto que nunca haberlo hecho",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Dios aprieta pero no ahoga",
+      "description": "La vida nos pone a prueba pero somos capaces de salir adelante",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Mucho ruido y pocas nueces",
+      "description": "Hablan mucho, pero hacen poco",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Si te he visto, no me acuerdo",
+      "description": "Aquello de lo que alguna vez se habló acaba de quedar en la nada",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "No hay mal que por bien no venga",
+      "description": "De una forma u otra siempre hay un aspecto positivo de casi todo",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Querer es poder",
+      "description": "Aquel que realmente desea algo, lo llega a conseguir",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Más vale maña que fuerza",
+      "description": "La inteligencia es superior a la fuerza bruta, esta nos hará realizar nuestros objetivos",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Barriga llena, corazon contento",
+      "description": "Aquel que tiene las necesidades básicas cubiertas no necesita de nada más",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Lo cortes no quita lo valiente",
+      "description": "La buena educación no se riñe con el carácter valiente y decidido",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Nunca es tarde si la dicha es buena",
+      "description": "Cuando algo es positivo aunque llegase en tardar siempre es bienvenido",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Quien tiene boca se equivoca",
+      "description": "Todos cometemos errores, somos personas",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "A rey muerto, rey puesto",
+      "description": "Cuando hay una vacante se ocupa rápidamente por el siguiente en la jerarquía",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Hoy por ti, mañana por mi",
+      "description": "Aquello que hacemos hoy nos beneficiará en el mañana",
       "created_at": "2013-03-16 17:41:28",
       "updated_at": "2013-03-16 17:41:28"
     }

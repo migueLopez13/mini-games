@@ -1,8 +1,6 @@
 <template>
   <v-row>
     <v-col cols="12" class="d-flex pt-12 px-12 align-center justify-center">
-      <v-img src="logo.webp" max-width="100px" max-height="100px" />
-
       <div class="title mx-4">
         {{ pageTitle }}
       </div>
@@ -13,6 +11,10 @@
     </v-col>
     <v-col cols="12" class="d-flex justify-center">
       <proverb-container />
+    </v-col>
+
+    <v-col cols="12" class="d-flex justify-center text primary-text">
+      ''{{ ProverbGame.proverbDescription }}''
     </v-col>
 
     <v-col cols="12" class="d-flex justify-center">
