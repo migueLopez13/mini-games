@@ -1,49 +1,52 @@
+@font-face {
+  font-family: 'Chela-one';
+  src: url('/ChelaOne-Regular.ttf') format('truetype');
+}
 
 @font-face {
-    font-family: 'Chela-one';
-    src: url("/ChelaOne-Regular.ttf") format("truetype");
+  font-family: 'Fjalla-One';
+  src: url('/FjallaOne-Regular.ttf') format('truetype');
 }
 
-@font-face {
-    font-family: 'Fjalla-One';
-    src: url("/FjallaOne-Regular.ttf") format("truetype");
+:root {
+  --primary-color: #086788;
+  --secondary-color: #06aed5;
+  --accent-color: #f0c808;
+  --base-color: #eefcff;
 }
 
-:root{
-    --primary-color: #086788;
-    --secondary-color: #06aed5;
-    --accent-color: #F0C808;
-    --base-color: #eefcff;
+body {
+  background-color: var(--base-color);
 }
 
-body{
-    background-color: var(--base-color);
+.title {
+  font-family: 'Chela-one', Arial, sans-serif;
+  font-size: 3.5rem;
+  color: var(--accent-color);
 }
 
-.title{
-    font-family: "Chela-one", Arial, sans-serif ;
-    font-size: 3.5rem;
-    color: var(--accent-color);
+.subtitle {
+  font-family: 'Chela-one', Arial, sans-serif;
+  font-size: 2rem;
+  color: var(--primary-color);
 }
 
-.subtitle{
-    font-family: "Chela-one", Arial, sans-serif ;
-    font-size: 2rem;
-    color: var(--primary-color);
+.text {
+  font-family: 'Fjalla-One', Arial, sans-serif;
+  font-size: 1.3rem;
 }
 
-.text{
-    font-family: "Fjalla-One", Arial, sans-serif ;
-    font-size: 1.3rem;
+.info {
+  letter-spacing: 1px;
+  color: var(--accent-color);
 }
 
-.info{
-    letter-spacing: 1px;
-    color: var(--accent-color);
-}
+.primary-text {
+  color: var(--primary-color);
+  font-style: italic;
+  font-weight: 700;
 
-.primary-text{
-    color: var(--primary-color);
-    font-style: italic;
-    font-weight: 700;
+  span::first-letter {
+    text-transform: uppercase;
+  }
 }

@@ -14,7 +14,8 @@
     </v-col>
 
     <v-col cols="12" class="d-flex justify-center text primary-text">
-      ''{{ ProverbGame.proverbDescription }}''
+      ''<span>{{ ProverbGame.proverbDescription }}</span
+      >''
     </v-col>
 
     <v-col cols="12" class="d-flex justify-center">
