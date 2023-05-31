@@ -41,7 +41,7 @@
 import { computed, ref } from 'vue'
 import { guessTheSaying } from '../definitions.ts'
 import ProverbGame from '../game-service.ts'
-import { removeAccentMarks } from '../utils';
+import { removeAccentMarks } from '../utils'
 
 const textToTry = ref<string>('')
 const error = ref<boolean>(false)
