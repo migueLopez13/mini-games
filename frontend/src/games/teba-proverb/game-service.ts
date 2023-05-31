@@ -1,8 +1,10 @@
 import { type Ref, ref } from 'vue'
 import { marks, proverb, proverbWord } from './definitions.js'
+import { removeAccentMarks } from './utils.js'
 
 function matrixFromProverb(proverb: string): proverbWord[] {
-  return proverb
+  const fixedProverb = removeAccentMarks(proverb.toUpperCase())
+  return fixedProverb
     .split(' ')
     .map(word =>
       word

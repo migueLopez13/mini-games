@@ -50,22 +50,23 @@ function blurRestartBtn() {
 }
 
 function handleKeydown(event) {
+  const capitalKey = event.key.toUpperCase() as string
   if (ProverbGame.lettersSelected.value.length === 5) {
     return
   }
-  if (event.key === 'Enter' && letterSelected.value) {
+  if (capitalKey === 'ENTER' && letterSelected.value) {
     blurRestartBtn()
     sendSelectedLetter()
   }
 
   if (
-    !letters.includes(event.key) ||
-    ProverbGame.lettersSelected.value.includes(event.key)
+    !letters.includes(capitalKey) ||
+    ProverbGame.lettersSelected.value.includes(capitalKey)
   ) {
     return
   }
 
-  selectLetter(event.key)
+  selectLetter(capitalKey)
 }
 
 function selectLetter(letter: string): void {

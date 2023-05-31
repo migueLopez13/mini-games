@@ -41,6 +41,7 @@
 import { computed, ref } from 'vue'
 import { guessTheSaying } from '../definitions.ts'
 import ProverbGame from '../game-service.ts'
+import { removeAccentMarks } from '../utils';
 
 const textToTry = ref<string>('')
 const error = ref<boolean>(false)
@@ -50,7 +51,8 @@ const placeholder = computed(() => {
 })
 
 function handleUserTry() {
-  ProverbGame.userTry(textToTry.value)
+  const fixedText = removeAccentMarks(textToTry.value)
+  ProverbGame.userTry(fixedText)
 
   if (ProverbGame.tries.value === 4) return
 

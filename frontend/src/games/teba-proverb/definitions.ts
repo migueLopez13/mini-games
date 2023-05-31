@@ -18,7 +18,7 @@ export interface proverb {
 }
 
 export const pageTitle = 'Refranero de teba'
-export const letters = 'qwertyuiopasdfghjklñzxcvbnm'
+export const letters = 'qwertyuiopasdfghjklñzxcvbnm'.toUpperCase()
 export const infoText = 'Descubre 5 letras:'
 export const infoTooltip =
   'Para deshacer la selección vuelve a pulsar la letra seleccionada'
