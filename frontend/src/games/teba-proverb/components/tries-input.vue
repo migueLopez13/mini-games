@@ -1,7 +1,10 @@
 <template>
   <v-row>
     <v-col cols="12" class="d-flex justify-center">
-      <div class="tries-input-wrapper d-flex align-center">
+      <div
+        v-if="ProverbGame.lettersSelected.value.length"
+        class="tries-input-wrapper d-flex align-center"
+      >
         <div
           :class="{
             'subtitle info-text mr-2': true,
