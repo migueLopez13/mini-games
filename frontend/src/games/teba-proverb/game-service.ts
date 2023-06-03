@@ -35,6 +35,10 @@ class ProverbGame {
       .then(data => data)
   }
 
+  private getProverbValue() {
+    return removeAccentMarks(this.proverb.value.proverb).toLowerCase()
+  }
+
   async startGame(): Promise<void> {
     this.proverb.value = await this.getProverb()
     this.proverbMatrix.value = matrixFromProverb(this.proverb.value.proverb)
@@ -58,10 +62,7 @@ class ProverbGame {
   }
 
   private isProverbCorrect(proverbTried: string): boolean {
-    return (
-      proverbTried.trim().toLowerCase() ===
-      this.proverb.value.proverb.trim().toLowerCase()
-    )
+    return proverbTried.toLowerCase() === this.getProverbValue()
   }
 
   userTry(proverbTried: string): void {
@@ -74,7 +75,11 @@ class ProverbGame {
     }
 
     this.tries.value--
-    if (this.tries.value === 0) this.gameIsFinished.value = true
+
+    if (this.tries.value === 0) {
+      this.showProverb()
+      this.gameIsFinished.value = true
+    }
   }
 
   get gameIsFinished(): Ref<boolean> {
