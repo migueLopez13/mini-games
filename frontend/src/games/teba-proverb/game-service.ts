@@ -19,6 +19,7 @@ class ProverbGame {
   public tries = ref<number>(4)
   public lettersSelected = ref<string[]>([])
   public proverbMatrix = ref<proverbWord[]>()
+  public skipLetters = ref<boolean>(false)
 
   private showProverb(): void {
     this.proverbMatrix.value = this.proverbMatrix.value.map(word =>
@@ -45,6 +46,7 @@ class ProverbGame {
     this.lettersSelected.value = []
     this.tries.value = 4
     this._gameIsFinished.value = false
+    this.skipLetters.value = false
   }
 
   discoverLetter(letterToDiscover: string): void {

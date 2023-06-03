@@ -1,8 +1,17 @@
 <template>
   <div class="letter-discover-container">
     <div class="information-text info text">
-      <v-icon icon="mdi-information-slab-circle-outline" color="accent" />
-      {{ infoText }}
+      <div>
+        <v-icon icon="mdi-information-slab-circle-outline" color="accent" />
+        {{ infoText }}
+      </div>
+      <v-btn
+        color="blue-grey-darken-4"
+        size="small"
+        @click="ProverbGame.skipLetters.value = true"
+      >
+        Adivinar
+      </v-btn>
     </div>
 
     <keyboard
@@ -34,6 +43,7 @@ function onLetterSelected(letter: string) {
   .information-text {
     padding-bottom: 10px;
     display: flex;
+    justify-content: space-between;
     gap: 2px;
     align-items: center;
   }

@@ -1,19 +1,21 @@
 <template>
-  <div
-    :class="{ 'proverb-wrapper': true, 'mt-10': !display.xs.value }"
-    :style="{ width: display.xs.value ? '100%' : '70%' }"
-  >
+  <div class="d-flex align-center flex-column">
     <div
-      v-for="(word, wordIndex) in ProverbGame.proverbMatrix.value"
-      class="word"
-      :key="wordIndex"
+      :class="{ 'proverb-wrapper': true, 'mt-10': !display.xs.value }"
+      :style="{ width: display.xs.value ? '100%' : '70%' }"
     >
-      <proverb-word :word="word" />
+      <div
+        v-for="(word, wordIndex) in ProverbGame.proverbMatrix.value"
+        class="word"
+        :key="wordIndex"
+      >
+        <proverb-word :word="word" />
+      </div>
     </div>
 
     <div
       :class="{
-        'text primary-text px-8 mt-3 text-center': true,
+        'text primary-text px-8 mt-10 text-center': true,
         'mobile-text': display.xs.value
       }"
     >

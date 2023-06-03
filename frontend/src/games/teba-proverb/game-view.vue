@@ -25,7 +25,12 @@
         'd-flex justify-center': triesInput
       }"
     >
-      <tries-input v-if="ProverbGame.lettersSelected.value.length > 4" />
+      <tries-input
+        v-if="
+          ProverbGame.lettersSelected.value.length > 4 ||
+          ProverbGame.skipLetters.value
+        "
+      />
       <letter-discover v-else />
     </v-col>
     <game-dialog v-if="ProverbGame.gameIsFinished.value" />
