@@ -2,15 +2,28 @@
   <v-row>
     <v-col cols="12" class="d-flex justify-center">
       <div class="tries-input-wrapper d-flex align-center">
-        <div class="subtitle mr-2">Letras descubiertas:</div>
+        <div
+          :class="{
+            'subtitle info-text mr-2': true,
+            'mobile-text': display.xs.value
+          }"
+        >
+          Letras descubiertas:
+        </div>
 
         <div
           v-for="(letter, index) in ProverbGame.lettersSelected.value"
           :key="index"
           class="mx-1"
         >
-          <v-btn icon size="small" color="accent">
-            {{ letter.toUpperCase() }}
+          <v-btn
+            icon
+            :size="display.xs.value ? 'x-small' : 'small'"
+            color="accent"
+          >
+            <span class="text mobile-text">
+              {{ letter.toUpperCase() }}
+            </span>
           </v-btn>
         </div>
       </div>
@@ -42,6 +55,9 @@ import { computed, ref } from 'vue'
 import { guessTheSaying } from '../definitions.ts'
 import ProverbGame from '../game-service.ts'
 import { removeAccentMarks } from '../utils'
+import { useDisplay } from 'vuetify'
+
+const display = useDisplay()
 
 const textToTry = ref<string>('')
 const error = ref<boolean>(false)

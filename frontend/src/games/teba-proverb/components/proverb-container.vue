@@ -1,5 +1,8 @@
 <template>
-  <div class="proverb-wrapper">
+  <div
+    :class="{ 'proverb-wrapper': true, 'ma-10': !display.xs.value }"
+    :style="{ width: display.xs.value ? '100%' : '70%' }"
+  >
     <div
       v-for="(word, wordIndex) in ProverbGame.proverbMatrix.value"
       class="word"
@@ -18,7 +21,7 @@
           'solo-btn': word.length === 1
         }"
         :style="{ 'font-size': display.xs.value ? '1rem' : '1.2rem' }"
-        :size="display.xs.value ? 'small' : 'large'"
+        :size="display.xs.value ? 'x-small' : 'large'"
         rounded="0"
         elevation="0"
         :color="getLetterColor(letter)"
@@ -42,19 +45,19 @@ const isLast = (index: number, wordLength: number) =>
 
 const getLetterColor = (letter: proverbLetter) => {
   if (marks.includes(letter.value)) return 'accent'
+  if (!ProverbGame.tries.value) return 'error'
+
   return letter.hide ? 'secondary' : 'green-lighten-1'
 }
 </script>
 
 <style lang="scss">
 .proverb-wrapper {
-  width: 70%;
   display: inline-flex;
   gap: 1rem;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin: 2rem;
 }
 .word {
   width: max-content;

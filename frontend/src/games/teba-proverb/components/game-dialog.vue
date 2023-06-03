@@ -30,7 +30,7 @@ const image = computed(() => {
 })
 
 const icon = computed(() => {
-  return ProverbGame.tries.value ? '🥳' : '😭🫠😢🤮😭🫠😢🤮'
+  return ProverbGame.tries.value ? '🥳' : '😭😢🤮😭😢🤮'
 })
 
 const showDialog = ref<boolean>(true)

@@ -1,11 +1,11 @@
 @font-face {
-  font-family: 'Chela-one';
-  src: url('/ChelaOne-Regular.ttf') format('truetype');
+  font-family: "Chela-one";
+  src: url("/ChelaOne-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Fjalla-One';
-  src: url('/FjallaOne-Regular.ttf') format('truetype');
+  font-family: "Fjalla-One";
+  src: url("/FjallaOne-Regular.ttf") format("truetype");
 }
 
 :root {
@@ -20,20 +20,27 @@ body {
 }
 
 .title {
-  font-family: 'Chela-one', Arial, sans-serif;
+  font-family: "Chela-one", Arial, sans-serif;
   font-size: 3.5rem;
   color: var(--accent-color);
 }
 
+.mobile-title {
+  font-size: 2rem;
+}
+
 .subtitle {
-  font-family: 'Chela-one', Arial, sans-serif;
+  font-family: "Chela-one", Arial, sans-serif;
   font-size: 2rem;
   color: var(--primary-color);
 }
 
 .text {
-  font-family: 'Fjalla-One', Arial, sans-serif;
+  font-family: "Fjalla-One", Arial, sans-serif;
   font-size: 1.3rem;
+}
+.mobile-text {
+  font-size: 1rem;
 }
 
 .info {
@@ -49,4 +56,8 @@ body {
   span::first-letter {
     text-transform: uppercase;
   }
+}
+
+.info-text {
+  color: #5a5757;
 }
