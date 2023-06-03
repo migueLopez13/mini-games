@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="{ 'proverb-wrapper': true, 'ma-10': !display.xs.value }"
+    :class="{ 'proverb-wrapper': true, 'mt-10': !display.xs.value }"
     :style="{ width: display.xs.value ? '100%' : '70%' }"
   >
     <div
@@ -8,24 +8,16 @@
       class="word"
       :key="wordIndex"
     >
-      <v-btn
-        v-for="(letter, index) in word"
-        :key="index"
-        :text="letter.hide ? '?' : letter.value"
-        :ripple="false"
-        style="cursor: default"
-        :class="{
-          'letter pa-0': true,
-          'first-btn': isFirst(index, word.length),
-          'last-btn': isLast(index, word.length),
-          'solo-btn': word.length === 1
-        }"
-        :style="{ 'font-size': display.xs.value ? '1rem' : '1.2rem' }"
-        :size="display.xs.value ? 'x-small' : 'large'"
-        rounded="0"
-        elevation="0"
-        :color="getLetterColor(letter)"
-      />
+      <proverb-word :word="word" />
+    </div>
+
+    <div
+      :class="{
+        'text primary-text px-8 mt-3 text-center': true,
+        'mobile-text': display.xs.value
+      }"
+    >
+      {{ description }}
     </div>
   </div>
 </template>
@@ -33,22 +25,15 @@
 <script setup lang="ts">
 import { useDisplay } from 'vuetify'
 import ProverbGame from '../game-service.ts'
-import { marks, proverbLetter } from '../definitions'
+import ProverbWord from './proverb-word.vue'
+import { capitalize } from '../utils.ts'
+import { computed } from 'vue'
 
 const display = useDisplay()
 
-const isFirst = (index: number, wordLength: number) =>
-  wordLength === 1 ? false : index === 0
-
-const isLast = (index: number, wordLength: number) =>
-  wordLength === 1 ? false : index === wordLength - 1
-
-const getLetterColor = (letter: proverbLetter) => {
-  if (marks.includes(letter.value)) return 'accent'
-  if (!ProverbGame.tries.value) return 'error'
-
-  return letter.hide ? 'secondary' : 'green-lighten-1'
-}
+const description = computed<string>(
+  () => `''${capitalize(ProverbGame.proverbDescription)}''`
+)
 </script>
 
 <style lang="scss">
@@ -63,21 +48,5 @@ const getLetterColor = (letter: proverbLetter) => {
   width: max-content;
   display: flex;
   flex-wrap: nowrap;
-
-  .first-btn {
-    border-radius: 20rem 0rem 0rem 20rem !important;
-  }
-
-  .last-btn {
-    border-radius: 0rem 20rem 20rem 0rem !important;
-  }
-
-  .solo-btn {
-    border-radius: 20rem !important;
-  }
-
-  .letter {
-    font-size: 1.5rem;
-  }
 }
 </style>

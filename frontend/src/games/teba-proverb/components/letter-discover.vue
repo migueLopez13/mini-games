@@ -5,12 +5,27 @@
       {{ infoText }}
     </div>
 
-    <keyboard></keyboard>
+    <keyboard
+      :selectedLetters="ProverbGame.lettersSelected.value"
+      @letter-selected="onLetterSelected"
+    />
   </div>
 </template>
 <script setup lang="ts">
-import { infoText } from '../definitions.ts'
+import { infoText, letters } from '../definitions.ts'
 import keyboard from './keyboard.vue'
+import ProverbGame from '../game-service'
+
+function onLetterSelected(letter: string) {
+  if (
+    !letters.includes(letter) ||
+    ProverbGame.lettersSelected.value.includes(letter)
+  ) {
+    return
+  }
+
+  ProverbGame.discoverLetter(letter)
+}
 </script>
 
 <style scoped lang="scss">

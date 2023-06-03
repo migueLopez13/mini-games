@@ -8,7 +8,7 @@
         class="text"
         :size="display.xs.value ? 'x-small' : undefined"
         :color="letter === letterSelected ? 'primary' : 'grey'"
-        :disabled="ProverbGame.lettersSelected.value.includes(letter)"
+        :disabled="selectedLetters.includes(letter)"
         @click="selectLetter(letter)"
       />
     </div>
@@ -30,7 +30,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import ProverbGame from '../game-service.ts'
 import { letters } from '../definitions.ts'
 import { useDisplay } from 'vuetify'
 
@@ -41,26 +40,19 @@ const keyboardLetters = ref(letters.split(''))
 const letterSelected = ref('')
 const submit = ref<HTMLElement>(null)
 
+defineProps<{ selectedLetters: string[] }>()
+const emit = defineEmits(['letterSelected'])
+
 function blurRestartBtn() {
   const focused = document.activeElement
   if (focused instanceof HTMLElement && focused.id === 'restart') focused.blur()
 }
 
-function handleKeydown(event) {
-  const capitalKey = event.key.toUpperCase() as string
-  if (ProverbGame.lettersSelected.value.length === 5) {
-    return
-  }
+function handleKeydown(event: KeyboardEvent) {
+  const capitalKey = event.key.toUpperCase()
   if (capitalKey === 'ENTER' && letterSelected.value) {
     blurRestartBtn()
     sendSelectedLetter()
-  }
-
-  if (
-    !letters.includes(capitalKey) ||
-    ProverbGame.lettersSelected.value.includes(capitalKey)
-  ) {
-    return
   }
 
   selectLetter(capitalKey)
@@ -71,9 +63,7 @@ function selectLetter(letter: string): void {
 }
 
 function sendSelectedLetter() {
-  ProverbGame.discoverLetter(letterSelected.value)
+  emit('letterSelected', letterSelected.value)
   letterSelected.value = ''
 }
 </script>
-
-<style scoped lang="scss"></style>

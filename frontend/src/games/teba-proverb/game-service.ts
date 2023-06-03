@@ -69,17 +69,20 @@ class ProverbGame {
     if (proverbTried === '') return
 
     if (this.isProverbCorrect(proverbTried)) {
-      this.showProverb()
-      this.gameIsFinished.value = true
+      this.finishGame()
       return
     }
 
     this.tries.value--
 
     if (this.tries.value === 0) {
-      this.showProverb()
-      this.gameIsFinished.value = true
+      this.finishGame()
     }
+  }
+
+  private finishGame() {
+    this.showProverb()
+    this.gameIsFinished.value = true
   }
 
   get gameIsFinished(): Ref<boolean> {
