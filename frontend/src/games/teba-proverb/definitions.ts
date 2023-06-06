@@ -27,4 +27,4 @@ export const gameOver = 'Perdiste! Te falta campo.'
 export const gameWinner = 'Ere un maquina as ganao bro!'
 export const guessTheSaying = 'Adivina el refrán'
 
-export const marks = [',', '.']
+export const marks = [',', '.', '¿', '?']

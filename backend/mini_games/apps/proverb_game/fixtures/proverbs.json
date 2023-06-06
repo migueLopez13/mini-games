@@ -187,5 +187,437 @@
       "created_at": "2013-03-16 17:41:28",
       "updated_at": "2013-03-16 17:41:28"
     }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Tira la piedra y esconde la mano",
+      "description": "actúan de forma miserable y después disimulan para no ser pillados",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Cría fama y ponte a dormir",
+      "description": "Cuando actuas de alguna manera, todo el mundo creerá que lo harás otra vez",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Quien mucho abarca, poco aprieta",
+      "description": "Aquellos que realizan muchas tareas a la vez no realizan ninguna correctamente.",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "¿Dónde va Vicente? Donde va la gente",
+      "description": "Algunos se dejan llevar por los demás",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "El que espera, desespera",
+      "description": "Cuando esperamos algo que no sabemos si ocurrirá nos ponemos muy nerviosos",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "No hay mal que dure cien años",
+      "description": "Cualquier problema se acaba solucionando con el paso del tiempo",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Guerra avisada no mata soldados",
+      "description": "si somos advertidos con antelación de algo no podemos ser pillados por sorpresa",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "El que no la debe, no la teme",
+      "description": "Quién no ha realizado algo incorrecto no tiene por qué tener miedo de ninguna reprimenda",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Si te he visto, no me acuerdo",
+      "description": "Aquello de lo que alguna vez se habló acaba de quedar en la nada",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Si te he visto, no me acuerdo",
+      "description": "Aquello de lo que alguna vez se habló acaba de quedar en la nada",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Lo cortés no quita lo valiente",
+      "description": "los buenos modales no son una debilidad",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Haz bien y no mires a quién",
+      "description": "Realizar actos positivos siempre es lo correcto, indistintamente de quién salga beneficiado",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "El pez grande se come al pequeño",
+      "description": "El poderoso siempre puede con el débil",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Se dice el pecado, pero no el pecador",
+      "description": "Cuando se habla de algo malo, no se apunta a nadie",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Gota a gota, la mar se agota",
+      "description": "Con el pasar del tiempo se llega a alcanzar cualquier meta",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "El tiempo es oro",
+      "description": "No debemos malgastar nuestro tiempo en cosas que no valen la pena",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Quien canta, su mal espanta",
+      "description": "Para aliviar los males, conviene buscar alguna diversión",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "El que a hierro mata, a hierro muere",
+      "description": "Aquel que hoy realiza una mala acción contra alguien, mañana se la pueden hacer a él",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Por la boca muere el pez",
+      "description": "Hablar demasiado nos puede perjudicar",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "La excepción hace la regla",
+      "description": "Siempre que algo sucede una y otra vez, en algún momento tiene que pasar de forma diferente",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Un clavo saca otro clavo",
+      "description": "una nueva experiencia puede ayudarnos a superar otra",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Decir refranes es decir verdades",
+      "description": "En refranes hay un pozo de sabiduría",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "La excepción hace la regla",
+      "description": "Siempre que algo sucede una y otra vez, en algún momento tiene que pasar de forma diferente",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "La intención es lo que cuenta",
+      "description": "salga bien o salga mal, si fue hecho con buena fe, estuvo bien realizado y es digno de elogio",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "A mala vida, mala muerte",
+      "description": "Cuando realizamos malos actos de forma sostenida al final pagaremos el precio de ello",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Al pan, pan, y al vino, vino",
+      "description": "Las cosas, claras.",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Matar moscas a cañonazos",
+      "description": "Realizar algo muy exagerado para un fin muy pequeño",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Agua que no has de beber, déjala correr",
+      "description": "Aquello que no nos interesa no debe preocuparnos",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Camarón que se duerme, se lo lleva la corriente",
+      "description": "Si nos relajamos y no prestamos atención podemos perder oportunidades",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Por mucho que madrugues no amanece más temprano",
+      "description": "Por mucho que nos angustiemos por algo, si tiene que pasar pasará",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "El hombre como el oso, mientras más feo más hermoso",
+      "description": "Un hombre rudo también tiene una belleza para ciertas personas",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "La avaricia rompe el saco",
+      "description": "Ser demasiado codiciosos nos puede llevar a perder todo lo que logramos",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Mal de muchos, consuelo de tontos",
+      "description": "Fijarse en los problemas de los demás no nos ayudará a resolver los propios",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Amor con amor se paga",
+      "description": "Portarse con los demás como ellos lo hicieron con nosotros, ser agradecidos",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Lo que no mata, engorda",
+      "description": "Aquello que no nos mata nos hace más fuertes",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Caras vemos, corazones no sabemos",
+      "description": "Nunca sabemos los pensamientos de los demás y los sentimientos que estos mueven",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Ojos que no ven, corazón que no siente",
+      "description": "Aquello de lo que no somos conscientes no puede hacernos daño",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Piensa mal y acertarás",
+      "description": "Ponerse en la peor situación nos hace estar preparados para todo lo que pueda ocurrir",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Del árbol caído, todos hacen leña",
+      "description": "Cuando alguien comete un error o es derrotado es cuando la gente aprovecha para malmeter",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Ojo por ojo, diente por diente",
+      "description": "La ley del talión, el que la hace la paga",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Quien se pica, ajos come",
+      "description": "Aquel que se muestra enojado por algo es señal de que aquella cuestión le es de importancia",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Mucho donaire, causa desaire",
+      "description": "Aquel que se muestra demasiado extrovertido puede llegar a no gustar a los demás",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Para muestra, un botón",
+      "description": "con un pequeño ejemplo de algo podemos llegar a imaginarnos el resto",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Lo barato sale caro",
+      "description": "Lo que cuesta poco, puede causar problemas",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Sarna con gusto no pica",
+      "description": "Cuando disfrutamos algo, no nos importan las dificultades que pueda tener",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Aunque la mona vista de seda, mona se queda",
+      "description": "Las formas no pueden ocultar la verdadera naturaleza de las cosas",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "Nunca llueve al gusto de todos",
+      "description": "No existe un criterio único para saber lo que es bueno y lo que no",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
+  },
+  {
+    "model": "proverb_game.proverb",
+    "fields": {
+      "proverb": "En boca cerrada no entran moscas",
+      "description": "A veces, asumir una postura humilde y no querer la atención es la opción más sabia",
+      "created_at": "2013-03-16 17:41:28",
+      "updated_at": "2013-03-16 17:41:28"
+    }
   }
 ]
