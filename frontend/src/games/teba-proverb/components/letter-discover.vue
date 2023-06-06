@@ -8,7 +8,7 @@
       <v-btn
         color="blue-grey-darken-4"
         size="small"
-        @click="ProverbGame.skipLetters.value = true"
+        @click="ProverbGame.openConfirmSkip.value = true"
       >
         Adivinar
       </v-btn>

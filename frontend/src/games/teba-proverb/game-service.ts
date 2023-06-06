@@ -20,6 +20,7 @@ class ProverbGame {
   public lettersSelected = ref<string[]>([])
   public proverbMatrix = ref<proverbWord[]>()
   public skipLetters = ref<boolean>(false)
+  public openConfirmSkip = ref<boolean>(false)
 
   private showProverb(): void {
     this.proverbMatrix.value = this.proverbMatrix.value.map(word =>

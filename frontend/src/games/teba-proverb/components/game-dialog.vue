@@ -17,7 +17,6 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-
 import ProverbGame from '../game-service.ts'
 import { gameWinner, gameOver } from '../definitions'
 
