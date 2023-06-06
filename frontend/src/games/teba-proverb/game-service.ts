@@ -83,6 +83,14 @@ class ProverbGame {
     }
   }
 
+  isLetterDiscoveredIncluded(letter: string) {
+    return this.proverbMatrix.value
+      .flat()
+      .some(
+        letterFromProverb => letterFromProverb.value === letter.toUpperCase()
+      )
+  }
+
   private finishGame() {
     this.showProverb()
     this.gameIsFinished.value = true

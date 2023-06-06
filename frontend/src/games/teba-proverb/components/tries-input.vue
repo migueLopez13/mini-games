@@ -22,7 +22,11 @@
           <v-btn
             icon
             :size="display.xs.value ? 'x-small' : 'small'"
-            color="accent"
+            :color="
+              ProverbGame.isLetterDiscoveredIncluded(letter.toUpperCase())
+                ? 'accent'
+                : 'red-accent-4'
+            "
           >
             <span class="text mobile-text">
               {{ letter.toUpperCase() }}
