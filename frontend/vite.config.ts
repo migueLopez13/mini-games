@@ -7,14 +7,14 @@ export default defineConfig({
   plugins: [
     vue({ template: transformAssetUrls }),
     vuetify({
-      autoImport: true,
-    }),
+      autoImport: true
+    })
   ],
   server: { port: 8080, host: true },
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@': fileURLToPath(new URL('./src', import.meta.url))
     },
-    extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
-  },
+    extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue']
+  }
 })

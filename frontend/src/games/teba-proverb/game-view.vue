@@ -5,13 +5,7 @@
         {{ pageTitle }}
       </div>
 
-      <v-btn
-        size="small"
-        id="restart"
-        icon
-        color="primary"
-        @click="restartGame"
-      >
+      <v-btn size="small" id="restart" icon color="primary" @click="startGame">
         <v-icon icon="mdi-restart" />
       </v-btn>
     </v-col>
@@ -50,8 +44,4 @@ const display = useDisplay()
 onMounted(async () => {
   await startGame()
 })
-
-const restartGame = async () => {
-  await startGame()
-}
 </script>

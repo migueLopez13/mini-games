@@ -88,6 +88,7 @@ const useProverbGameStore = defineStore('proverbGame', () => {
   }
 
   return {
+    proverb,
     userGuess,
     isFinished,
     getProverb,

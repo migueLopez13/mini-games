@@ -1,4 +1,4 @@
-export function removeAccentMarks(text: string): string {
+export function removeAccentMarks(text: string = ''): string {
   const accentMap = {
     Á: 'A',
     É: 'E',
