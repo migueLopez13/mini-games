@@ -10,8 +10,8 @@ Mini-games is a GitHub project that aims to provide a collection of fun and ente
 
 The Mini-games project utilizes the following technologies:
 
-- Frontend: Vue.js
-- Backend: Django + MySQL
+- Frontend: Vue + TypeScript, Vite, Vitest, Pinia, Vuetify
+- Backend: Django + DRF + MySQL
 - Containerization: Docker
 
 ## Development Setup
