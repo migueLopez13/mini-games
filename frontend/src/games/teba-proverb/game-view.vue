@@ -25,22 +25,17 @@
         'd-flex justify-center': triesInput
       }"
     >
-      <tries-input
-        v-if="
-          ProverbGame.lettersSelected.value.length > 4 ||
-          ProverbGame.skipLetters.value
-        "
-      />
+      <tries-input v-if="game.selectedLetters.length > 4 || game.skipLetters" />
       <letter-discover v-else />
     </v-col>
-    <game-dialog v-if="ProverbGame.gameIsFinished.value" />
-    <guess-confirmation-dialog v-if="ProverbGame.openConfirmSkip.value" />
+    <game-dialog v-if="game.isFinished" />
+    <guess-confirmation-dialog v-if="game.openConfirmSkip" />
   </v-row>
 </template>
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import ProverbGame from './game-service.ts'
+import { startGame } from './game-service.ts'
 import proverbContainer from './components/proverb-container.vue'
 import letterDiscover from './components/letter-discover.vue'
 import triesInput from './components/tries-input.vue'
@@ -48,14 +43,15 @@ import gameDialog from './components/game-dialog.vue'
 import guessConfirmationDialog from './components/guess-confirmation-dialog.vue'
 import { pageTitle } from './definitions.ts'
 import { useDisplay } from 'vuetify'
+import game from './store.ts'
 
 const display = useDisplay()
 
 onMounted(async () => {
-  await ProverbGame.startGame()
+  await startGame()
 })
 
 const restartGame = async () => {
-  await ProverbGame.startGame()
+  await startGame()
 }
 </script>

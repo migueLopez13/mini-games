@@ -17,19 +17,19 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import ProverbGame from '../game-service.ts'
 import { gameWinner, gameOver } from '../definitions'
+import game from '../store.ts'
 
 const message = computed(() => {
-  return ProverbGame.tries.value ? gameWinner : gameOver
+  return game.tries ? gameWinner : gameOver
 })
 
 const image = computed(() => {
-  return ProverbGame.tries.value ? 'logo.webp' : 'loser.webp'
+  return game.tries ? 'logo.webp' : 'loser.webp'
 })
 
 const icon = computed(() => {
-  return ProverbGame.tries.value ? '🥳' : '😭😢🤮😭😢🤮'
+  return game.tries ? '🥳' : '😭😢🤮😭😢🤮'
 })
 
 const showDialog = ref<boolean>(true)

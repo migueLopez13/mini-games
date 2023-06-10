@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="ProverbGame.openConfirmSkip.value" width="auto">
+  <v-dialog v-model="game.openConfirmSkip" width="auto">
     <v-card>
       <v-card-text class="d-flex flex-column justify-center">
         <div>
@@ -11,7 +11,7 @@
           <v-btn
             color="grey-darken-4"
             class="mx-2"
-            @click="ProverbGame.openConfirmSkip.value = false"
+            @click="game.openConfirmSkip = false"
             >No</v-btn
           >
         </div>
@@ -21,11 +21,11 @@
 </template>
 
 <script setup lang="ts">
-import ProverbGame from '../game-service'
+import game from '../store.ts'
 
 function confirm() {
-  ProverbGame.openConfirmSkip.value = false
-  ProverbGame.skipLetters.value = true
+  game.setOpenConfirmSkip(false)
+  game.setSkipLetters(true)
 }
 </script>
 

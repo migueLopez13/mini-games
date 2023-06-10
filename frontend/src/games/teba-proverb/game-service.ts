@@ -1,108 +1,63 @@
-import { type Ref, ref } from 'vue'
-import { marks, proverb, proverbWord } from './definitions.js'
+import { letters, marks, proverb, proverbWord } from './definitions.js'
 import { removeAccentMarks } from './utils.js'
+import game from './store.ts'
 
-function matrixFromProverb(proverb: string): proverbWord[] {
-  const fixedProverb = removeAccentMarks(proverb.toUpperCase())
-  return fixedProverb
-    .split(' ')
-    .map(word =>
-      word
-        .split('')
-        .map(letter => ({ value: letter, hide: !marks.includes(letter) }))
-    )
+function generateProverbMatrix(proverb: proverb): proverbWord[] {
+  return proverb.proverb.split(' ').map(word =>
+    word.split('').map(letter => ({
+      value: letter.toUpperCase(),
+      hide: !marks.includes(letter)
+    }))
+  )
 }
 
-class ProverbGame {
-  private readonly _gameIsFinished = ref<boolean>(false)
-  private proverb = ref<proverb>()
-  public tries = ref<number>(4)
-  public lettersSelected = ref<string[]>([])
-  public proverbMatrix = ref<proverbWord[]>()
-  public skipLetters = ref<boolean>(false)
-  public openConfirmSkip = ref<boolean>(false)
-
-  private showProverb(): void {
-    this.proverbMatrix.value = this.proverbMatrix.value.map(word =>
-      word.map(letter => ({
-        ...letter,
-        hide: false
-      }))
-    )
-  }
-
-  private async getProverb(): Promise<proverb> {
-    return await fetch('http://localhost:8001/api/proverbs/')
-      .then(async response => await response.json())
-      .then(data => data)
-  }
-
-  private getProverbValue() {
-    return removeAccentMarks(this.proverb.value.proverb).toLowerCase()
-  }
-
-  async startGame(): Promise<void> {
-    this.proverb.value = await this.getProverb()
-    this.proverbMatrix.value = matrixFromProverb(this.proverb.value.proverb)
-    this.lettersSelected.value = []
-    this.tries.value = 4
-    this._gameIsFinished.value = false
-    this.skipLetters.value = false
-  }
-
-  discoverLetter(letterToDiscover: string): void {
-    if (this.lettersSelected.value.includes(letterToDiscover)) return
-    this.lettersSelected.value.push(letterToDiscover)
-
-    this.proverbMatrix.value = this.proverbMatrix.value.map(word =>
-      word.map(letter => ({
-        ...letter,
-        hide:
-          !this.lettersSelected.value.includes(letter.value) &&
-          !marks.includes(letter.value)
-      }))
-    )
-  }
-
-  private isProverbCorrect(proverbTried: string): boolean {
-    return proverbTried.toLowerCase() === this.getProverbValue()
-  }
-
-  userTry(proverbTried: string): void {
-    if (proverbTried === '') return
-
-    if (this.isProverbCorrect(proverbTried)) {
-      this.finishGame()
-      return
-    }
-
-    this.tries.value--
-
-    if (this.tries.value === 0) {
-      this.finishGame()
-    }
-  }
-
-  isLetterDiscoveredIncluded(letter: string) {
-    return this.proverbMatrix.value
-      .flat()
-      .some(
-        letterFromProverb => letterFromProverb.value === letter.toUpperCase()
-      )
-  }
-
-  private finishGame() {
-    this.showProverb()
-    this.gameIsFinished.value = true
-  }
-
-  get gameIsFinished(): Ref<boolean> {
-    return this._gameIsFinished
-  }
-
-  get proverbDescription(): String {
-    return this.proverb.value?.description
-  }
+async function getProverb(): Promise<proverb> {
+  return await fetch('http://localhost:8001/api/proverbs/')
+    .then(async response => await response.json())
+    .then(data => data)
 }
 
-export default new ProverbGame()
+export async function startGame(): Promise<void> {
+  const proverb = await getProverb()
+  const matrix = generateProverbMatrix(proverb)
+
+  game.setProverb(proverb)
+  game.setProverbMatrix(matrix)
+  game.start()
+}
+
+export function discoverLetter(letterToDiscover: string): void {
+  if (
+    game.selectedLetters.includes(letterToDiscover) ||
+    !letters.includes(letterToDiscover)
+  )
+    return
+
+  game.addSelectedLetter(letterToDiscover)
+}
+
+export function isProverbCorrect(proverbTried: string): boolean {
+  return proverbTried.toUpperCase() === game.getProverb
+}
+
+export function userTry(proverbTried: string): void {
+  if (proverbTried === '') return
+
+  const fixedTry = removeAccentMarks(proverbTried)
+  if (isProverbCorrect(fixedTry)) {
+    game.setIsFinished(true)
+    return
+  }
+
+  game.tries--
+
+  if (game.tries === 0) {
+    game.setIsFinished(true)
+    return
+  }
+  game.resetUserGuess()
+}
+
+export function isCorrectLetter(letter: string) {
+  return game.getProverb.includes(letter)
+}

@@ -8,33 +8,23 @@
       <v-btn
         color="blue-grey-darken-4"
         size="small"
-        @click="ProverbGame.openConfirmSkip.value = true"
+        @click="game.openConfirmSkip = true"
       >
         Adivinar
       </v-btn>
     </div>
 
     <keyboard
-      :selectedLetters="ProverbGame.lettersSelected.value"
-      @letter-selected="onLetterSelected"
+      :selectedLetters="game.selectedLetters"
+      @letter-selected="discoverLetter"
     />
   </div>
 </template>
 <script setup lang="ts">
-import { infoText, letters } from '../definitions.ts'
+import { infoText } from '../definitions.ts'
 import keyboard from './keyboard.vue'
-import ProverbGame from '../game-service'
-
-function onLetterSelected(letter: string) {
-  if (
-    !letters.includes(letter) ||
-    ProverbGame.lettersSelected.value.includes(letter)
-  ) {
-    return
-  }
-
-  ProverbGame.discoverLetter(letter)
-}
+import { discoverLetter } from '../game-service'
+import game from '../store.ts'
 </script>
 
 <style scoped lang="scss">

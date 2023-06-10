@@ -23,7 +23,7 @@
 import { proverbWord } from '../definitions'
 import { useDisplay } from 'vuetify'
 import { marks, proverbLetter } from '../definitions'
-import ProverbGame from '../game-service.ts'
+import game from '../store'
 
 defineProps<{ word: proverbWord }>()
 const display = useDisplay()
@@ -36,7 +36,7 @@ const isLast = (index: number, wordLength: number) =>
 
 const getLetterColor = (letter: proverbLetter) => {
   if (marks.includes(letter.value)) return 'accent'
-  if (!ProverbGame.tries.value) return 'error'
+  if (!game.tries) return 'error'
 
   return letter.hide ? 'secondary' : 'green-lighten-1'
 }

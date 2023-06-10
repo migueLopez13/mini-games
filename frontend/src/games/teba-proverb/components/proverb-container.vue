@@ -5,7 +5,7 @@
       :style="{ width: display.xs.value ? '100%' : '70%' }"
     >
       <div
-        v-for="(word, wordIndex) in ProverbGame.proverbMatrix.value"
+        v-for="(word, wordIndex) in game.getProverbMatrix"
         class="word"
         :key="wordIndex"
       >
@@ -19,23 +19,17 @@
         'mobile-text': display.xs.value
       }"
     >
-      {{ description }}
+      {{ game.getProverbDescription }}
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useDisplay } from 'vuetify'
-import ProverbGame from '../game-service.ts'
 import ProverbWord from './proverb-word.vue'
-import { capitalize } from '../utils.ts'
-import { computed } from 'vue'
+import game from '../store'
 
 const display = useDisplay()
-
-const description = computed<string>(
-  () => `''${capitalize(ProverbGame.proverbDescription)}''`
-)
 </script>
 
 <style lang="scss">

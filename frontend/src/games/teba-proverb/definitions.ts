@@ -10,8 +10,6 @@ export interface proverbLetter {
 
 export type proverbWord = proverbLetter[]
 
-/* export type proverb = proverbWord[]
- */
 export interface proverb {
   proverb: string
   description: string
