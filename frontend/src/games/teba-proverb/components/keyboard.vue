@@ -1,16 +1,21 @@
 <template>
   <div :class="{ 'd-flex': true, 'flex-column': display.xs.value }">
-    <div class="d-flex flex-wrap justify-center align-center">
-      <v-btn
-        v-for="letter in keyboardLetters"
-        :text="letter"
-        rounded="0"
-        class="text"
-        :size="display.xs.value ? 'x-small' : undefined"
-        :color="letter === letterSelected ? 'primary' : 'grey'"
-        :disabled="selectedLetters.includes(letter)"
-        @click="selectLetter(letter)"
-      />
+    <div class="d-flex flex-column justify-center">
+      <div
+        v-for="keyboardRow in lettersRows"
+        class="d-flex justify-center align-center"
+      >
+        <v-btn
+          v-for="letter in keyboardRow.split('')"
+          :text="letter"
+          rounded="0"
+          class="text"
+          :size="display.xs.value ? 'x-small' : undefined"
+          :color="letter === letterSelected ? 'primary' : 'grey'"
+          :disabled="selectedLetters.includes(letter)"
+          @click="selectLetter(letter)"
+        />
+      </div>
     </div>
 
     <v-btn
@@ -30,13 +35,12 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { letters } from '../definitions.ts'
+import { lettersRows } from '../definitions.ts'
 import { useDisplay } from 'vuetify'
 
 const display = useDisplay()
 document.addEventListener('keydown', handleKeydown)
 
-const keyboardLetters = ref(letters.split(''))
 const letterSelected = ref('')
 const submit = ref<HTMLElement>(null)
 
