@@ -17,12 +17,11 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
 
-      - name: Checkout frontend
-        run: ls -alh && cd frontend/ 
-
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
-        
+        with:
+          path: ./frontend
+
       - name: Build project
         run: npm run build
 
