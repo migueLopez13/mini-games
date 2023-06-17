@@ -11,9 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout frontend
-        run: cd /frontend
-
       - name: Checkout repo
         uses: actions/checkout@v3
 
@@ -22,6 +19,9 @@ jobs:
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
+
+      - name: Checkout frontend
+        run: ls -alh && cd frontend/ 
 
       - name: Build project
         run: npm run build
