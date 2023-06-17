@@ -9,11 +9,11 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: frontend
 
     steps:
+      - name: Checkout frontend
+        run: cd frontend
+
       - name: Checkout repo
         uses: actions/checkout@v3
 
