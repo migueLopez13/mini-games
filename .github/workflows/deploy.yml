@@ -19,14 +19,13 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v3
+        with:
+          cache-dependency-path: ./frontend
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
       - name: Build project
-        uses: actions/setup-node@v3
-        with:
-          cache-dependency-path: ./frontend
         run: npm run build
 
       - name: Upload production-ready build files
