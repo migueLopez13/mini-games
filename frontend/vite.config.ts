@@ -4,6 +4,7 @@ import { defineConfig } from 'vite'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineConfig({
+  base:"/mini-games/",
   plugins: [
     vue({ template: transformAssetUrls }),
     vuetify({
@@ -16,5 +17,24 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
     extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue']
-  }
+  },
+    build: {
+      target: 'es2020',
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vue: ['vue', 'pinia'],
+            vuetify: [
+              'vuetify',
+              'vuetify/components',
+              'vuetify/directives',
+              'webfontloader',
+            ],
+            materialdesignicons: ['@mdi/font/css/materialdesignicons.css'],
+          },
+        },
+      },
+    },
+  
+
 })
