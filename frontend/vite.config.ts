@@ -1,12 +1,11 @@
 import vue from '@vitejs/plugin-vue'
-import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
-import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+import vuetify from 'vite-plugin-vuetify'
 
 export default defineConfig({
-  base:"/mini-games/",
+  base: '/mini-games/',
   plugins: [
-    vue({ template: transformAssetUrls }),
+    vue(),
     vuetify({
       autoImport: true
     })
@@ -14,27 +13,20 @@ export default defineConfig({
   server: { port: 8080, host: true },
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': '/src'
     },
-    extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue']
+    extensions: ['.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
   },
-    build: {
-      target: 'es2020',
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            vue: ['vue', 'pinia'],
-            vuetify: [
-              'vuetify',
-              'vuetify/components',
-              'vuetify/directives',
-              'webfontloader',
-            ],
-            materialdesignicons: ['@mdi/font/css/materialdesignicons.css'],
-          },
-        },
-      },
-    },
-  
-
+  build: {
+    target: 'es2020',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vue: ['vue', 'pinia'],
+          vuetify: ['vuetify', 'vuetify/components', 'vuetify/directives'],
+          materialdesignicons: ['@mdi/font/css/materialdesignicons.css']
+        }
+      }
+    }
+  }
 })
