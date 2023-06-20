@@ -45,12 +45,12 @@ jobs:
           name: production-files
           path: ./frontend/dist
 
-      - name: Change default domain
-        run: echo 'http://www.mini-games.es/' > CNAME
-        working-directory: ./frontend/dist
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./frontend/dist
+
+      - name: Change default domain
+        run: echo 'http://www.mini-games.es/' > CNAME
+        working-directory: ./frontend/dist
