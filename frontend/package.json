@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "echo 'http://www.mini-games.es/' > CNAME",
+    "prebuild": "echo 'http://www.mini-games.es/' > dist/CNAME",
     "build": "vue-tsc && vite build",
     "lint": "eslint --fix --ext .js,.vue,.ts .",
     "preview": "vite preview",
