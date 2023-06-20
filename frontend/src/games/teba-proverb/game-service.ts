@@ -5,7 +5,7 @@ import { getProverb } from './api.ts'
 
 function generateProverbMatrix(proverb: proverb): proverbWord[] {
   if (!proverb) return []
-  return proverb.proverb.split(' ').map(word =>
+  return proverb.value.split(' ').map(word =>
     word.split('').map(letter => ({
       value: letter.toUpperCase(),
       hide: !marks.includes(letter)

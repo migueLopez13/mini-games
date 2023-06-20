@@ -11,7 +11,7 @@ export interface proverbLetter {
 export type proverbWord = proverbLetter[]
 
 export interface proverb {
-  proverb: string
+  value: string
   description: string
 }
 
