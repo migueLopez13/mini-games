@@ -1,7 +1,7 @@
 import { proverb, proverbWord } from '../definitions'
 
 export const mockProverb: proverb = {
-  proverb: 'test mock',
+  value: 'test mock',
   description: 'description'
 }
 export const mockMatrix: proverbWord[] = [

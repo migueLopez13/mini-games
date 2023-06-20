@@ -1,6 +1,0 @@
-Django
-mysqlclient
-djangorestframework
-django-simple-history
-django-environ
-django-cors-headers
