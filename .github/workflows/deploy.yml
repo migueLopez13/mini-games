@@ -45,9 +45,9 @@ jobs:
           name: production-files
           path: ./frontend/dist
 
-      - name: Build project
-        run: npm run add-domain
-        working-directory: ./frontend
+      - name: Change default domain
+        run: echo 'http://www.mini-games.es/' > dCNAME
+        working-directory: ./frontend/dist
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
