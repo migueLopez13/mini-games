@@ -50,7 +50,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./frontend/dist
-
-      - name: Change default domain
-        run: echo 'http://www.mini-games.es/' > CNAME
-        working-directory: ./frontend/dist
