@@ -46,7 +46,7 @@ jobs:
           path: ./frontend/dist
 
       - name: Change default domain
-        run: echo 'http://www.mini-games.es/' > dCNAME
+        run: echo 'http://www.mini-games.es/' > CNAME
         working-directory: ./frontend/dist
 
       - name: Deploy to GitHub Pages
