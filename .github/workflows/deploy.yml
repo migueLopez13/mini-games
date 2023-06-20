@@ -45,6 +45,10 @@ jobs:
           name: production-files
           path: ./frontend/dist
 
+      - name: Build project
+        run: npm run add-domain
+        working-directory: ./frontend
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
