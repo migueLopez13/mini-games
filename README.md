@@ -11,29 +11,27 @@ Mini-games is a GitHub project that aims to provide a collection of fun and ente
 The Mini-games project utilizes the following technologies:
 
 - Frontend: Vue + TypeScript, Vite, Vitest, Pinia, Vuetify
-- Backend: Django + DRF + MySQL
-- Containerization: Docker
+- Backend: Supabase
 
 ## Development Setup
 
 To set up the project for development, follow these steps:
 
-1. Start the Docker containers by running the following command:
+1. Install the dependencies:
 
 ```bash
-docker-compose up
+npm install
 ```
 
-2. Seed the database with initial data:
+2. Start vite dev server:
 
 ```bash
-docker-compose exec backend bash
-python manage.py loaddata proverbs.json
+npm run dev
 ```
 
 ## Playing the Game
 
-The game is also available to play through the production server. You can access it using the following URL: https://www.teba-mini-games.fun/
+The game is also available to play through the production server. You can access it using the following URL: http://www.mini-games.es/
 
 ## Authors
 
