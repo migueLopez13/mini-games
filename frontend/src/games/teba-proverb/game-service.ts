@@ -1,11 +1,11 @@
-import { letters, marks, proverb, proverbWord } from './definitions.js'
+import { letters, marks, proverbWord } from './definitions.js'
 import { removeAccentMarks } from './utils.js'
 import game from './store.ts'
 import { getProverb } from './api.ts'
 
-function generateProverbMatrix(proverb: proverb): proverbWord[] {
-  if (!proverb) return []
-  return proverb.value.split(' ').map(word =>
+function generateProverbMatrix(): proverbWord[] {
+  if (!game.proverb.value) return []
+  return game.proverb.value.split(' ').map(word =>
     word.split('').map(letter => ({
       value: letter.toUpperCase(),
       hide: !marks.includes(letter)
@@ -15,8 +15,8 @@ function generateProverbMatrix(proverb: proverb): proverbWord[] {
 
 export async function startGame(): Promise<void> {
   const proverb = await getProverb()
-  const matrix = generateProverbMatrix(proverb)
   game.setProverb(proverb)
+  const matrix = generateProverbMatrix()
   game.setProverbMatrix(matrix)
   game.start()
 }

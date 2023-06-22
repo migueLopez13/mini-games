@@ -15,7 +15,7 @@ const useProverbGameStore = defineStore('proverbGame', () => {
   const userGuess = ref<string>('')
 
   const getProverb = computed(() => {
-    return removeAccentMarks(proverb.value.value).toUpperCase()
+    return proverb.value.value
   })
 
   const getProverbDescription = computed(() => {
@@ -44,7 +44,8 @@ const useProverbGameStore = defineStore('proverbGame', () => {
   })
 
   function setProverb(nextProverb: proverb) {
-    proverb.value = nextProverb
+    const value = removeAccentMarks(nextProverb.value).toUpperCase()
+    proverb.value = { ...nextProverb, value }
   }
 
   function setIsFinished(value: boolean) {
