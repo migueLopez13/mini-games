@@ -4,7 +4,7 @@ import appToolbar from './components/app-toolbar.vue'
 </script>
 
 <template>
-  <v-layout class="flex-column">
+  <v-layout class="flex-column" full-height >
     <app-toolbar />
     <v-main>
       <game />
