@@ -49,5 +49,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          cname: ${{ secrets.GH_PAGES_CNAME }}
+          cname: www.mini-games.es
           publish_dir: ./frontend/dist
