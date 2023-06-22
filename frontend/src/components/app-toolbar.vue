@@ -3,8 +3,10 @@
     <template v-slot:append>
       <v-menu>
         <template v-slot:activator="{ props }">
-          <v-btn color="primary" v-bind="props">
-            <div class="d-flex align-center subtitle">Mis juegos</div>
+          <v-btn variant="elevated" color="accent" v-bind="props">
+            <div class="d-flex align-center subtitle mobile-text">
+              Mis juegos
+            </div>
           </v-btn>
         </template>
         <v-list>
@@ -30,7 +32,7 @@ type gameLink = {
   path: string
 }
 const games = ref<gameLink[]>([
-  { name: 'Refranero de teba', path: '' },
-  { name: 'Sopa de letras', path: '' }
+  { name: 'Refranero de teba', path: '/proverbs' },
+  { name: 'Sopa de letras', path: '/word-search' }
 ])
 </script>
