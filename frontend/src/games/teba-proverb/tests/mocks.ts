@@ -42,3 +42,107 @@ export const mockMatrix: proverbWord[] = [
     }
   ]
 ]
+
+export const mockUpdatedMatrix: proverbWord[] = [
+  [
+    {
+      hide: false,
+      value: 'T'
+    },
+    {
+      hide: true,
+      value: 'E'
+    },
+    {
+      hide: true,
+      value: 'S'
+    },
+    {
+      hide: false,
+      value: 'T'
+    }
+  ],
+  [
+    {
+      hide: true,
+      value: 'M'
+    },
+    {
+      hide: true,
+      value: 'O'
+    },
+    {
+      hide: true,
+      value: 'C'
+    },
+    {
+      hide: true,
+      value: 'K'
+    }
+  ]
+]
+
+export const mockFinishedMatrix: proverbWord[] = [
+  [
+    {
+      hide: false,
+      value: 'T'
+    },
+    {
+      hide: false,
+      value: 'E'
+    },
+    {
+      hide: false,
+      value: 'S'
+    },
+    {
+      hide: false,
+      value: 'T'
+    }
+  ],
+  [
+    {
+      hide: false,
+      value: 'M'
+    },
+    {
+      hide: false,
+      value: 'O'
+    },
+    {
+      hide: false,
+      value: 'C'
+    },
+    {
+      hide: false,
+      value: 'K'
+    }
+  ]
+]
+
+export const mockMatrixWithMarks = [
+  [
+    {
+      hide: true,
+      value: 'A'
+    },
+    {
+      hide: true,
+      value: '?'
+    }
+  ]
+]
+
+export const expectedMockMatrixWithMarks = [
+  [
+    {
+      hide: true,
+      value: 'A'
+    },
+    {
+      hide: false,
+      value: '?'
+    }
+  ]
+]
