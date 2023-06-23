@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import game from './games/teba-proverb/game-view.vue'
 import appToolbar from './components/app-toolbar.vue'
 </script>
 
 <template>
-  <v-layout class="flex-column">
+  <v-layout class="flex-column" full-height>
     <app-toolbar />
     <v-main>
-      <game />
+      <router-view />
     </v-main>
   </v-layout>
 </template>

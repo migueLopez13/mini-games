@@ -42,6 +42,9 @@ import game from './store.ts'
 const display = useDisplay()
 
 onMounted(async () => {
+  if (game.getProverb) {
+    return
+  }
   await startGame()
 })
 </script>
