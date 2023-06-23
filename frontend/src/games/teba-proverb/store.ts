@@ -11,7 +11,7 @@ const useProverbGameStore = defineStore('proverbGame', () => {
   const isFinished = useLocalStorage('isFinished', false)
   const tries = useLocalStorage('tries', 4)
   const selectedLetters = useLocalStorage('selectedLetters', [] as string[])
-  const skipLetters = useLocalStorage('openConfirmSkip', false)
+  const skipLetters = useLocalStorage('skipLetters', false)
   const openConfirmSkip = useLocalStorage('openConfirmSkip', false)
   const userGuess = useLocalStorage('userGuess', '')
 
