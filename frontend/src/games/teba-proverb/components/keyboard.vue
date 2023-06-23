@@ -9,7 +9,7 @@
           v-for="letter in keyboardRow.split('')"
           :text="letter"
           rounded="0"
-          class="text"
+          class="text notranslate"
           :size="display.xs.value ? 'x-small' : undefined"
           :color="letter === letterSelected ? 'primary' : 'grey'"
           :disabled="selectedLetters.includes(letter)"
