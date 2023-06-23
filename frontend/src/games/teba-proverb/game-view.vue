@@ -22,7 +22,7 @@
       <tries-input v-if="game.selectedLetters.length > 4 || game.skipLetters" />
       <letter-discover v-else />
     </v-col>
-    <game-dialog v-model="game.isFinished" />
+    <game-dialog v-model="game.openEndDialog" />
     <guess-confirmation-dialog v-model="game.openConfirmSkip" />
   </v-row>
 </template>
