@@ -13,6 +13,7 @@ const useProverbGameStore = defineStore('proverbGame', () => {
   const selectedLetters = useLocalStorage('selectedLetters', [] as string[])
   const skipLetters = useLocalStorage('skipLetters', false)
   const openConfirmSkip = useLocalStorage('openConfirmSkip', false)
+  const openEndDialog = useLocalStorage('openEndDialog', false)
   const userGuess = useLocalStorage('userGuess', '')
 
   const getProverb = computed(() => {
@@ -51,6 +52,7 @@ const useProverbGameStore = defineStore('proverbGame', () => {
 
   function setIsFinished(value: boolean) {
     isFinished.value = value
+    openEndDialog.value = value
   }
 
   function setSkipLetters(value: boolean) {
@@ -99,6 +101,7 @@ const useProverbGameStore = defineStore('proverbGame', () => {
     proverbMatrix,
     skipLetters,
     openConfirmSkip,
+    openEndDialog,
     getInputError,
     getProverbMatrix,
     getProverbDescription,
