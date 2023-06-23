@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.25.0",
+    "@vueuse/core": "^10.2.0",
     "pinia": "^2.1.3",
     "sass": "^1.62.1",
     "vite-plugin-vuetify": "^1.0.2",

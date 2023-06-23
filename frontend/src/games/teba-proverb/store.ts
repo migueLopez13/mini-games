@@ -1,18 +1,19 @@
 import { defineStore } from 'pinia'
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import { proverb, proverbWord, marks, proverbLetter } from './definitions.js'
 import { capitalize, removeAccentMarks } from './utils.js'
 import pinia from '../../plugins/pinia.ts'
+import { useLocalStorage } from '@vueuse/core'
 
 const useProverbGameStore = defineStore('proverbGame', () => {
-  const proverb = ref<proverb>({} as proverb)
-  const proverbMatrix = ref<proverbWord[]>([])
-  const isFinished = ref<boolean>(false)
-  const tries = ref<number>(4)
-  const selectedLetters = ref<string[]>([])
-  const skipLetters = ref<boolean>(false)
-  const openConfirmSkip = ref<boolean>(false)
-  const userGuess = ref<string>('')
+  const proverb = useLocalStorage('proverb', {} as proverb)
+  const proverbMatrix = useLocalStorage('proverbMatrix', [] as proverbWord[])
+  const isFinished = useLocalStorage('isFinished', false)
+  const tries = useLocalStorage('tries', 4)
+  const selectedLetters = useLocalStorage('selectedLetters', [] as string[])
+  const skipLetters = useLocalStorage('openConfirmSkip', false)
+  const openConfirmSkip = useLocalStorage('openConfirmSkip', false)
+  const userGuess = useLocalStorage('userGuess', '')
 
   const getProverb = computed(() => {
     return proverb.value.value
