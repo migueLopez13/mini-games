@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="showDialog" width="auto">
+  <v-dialog v-bind="$attrs" width="auto">
     <v-card>
       <v-card-text class="d-flex flex-column justify-center">
         <v-img :src="image" class="mx-auto" width="200px" height="200px" />
@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import { gameWinner, gameOver } from '../definitions'
 import game from '../store.ts'
 
@@ -31,8 +31,4 @@ const image = computed(() => {
 const icon = computed(() => {
   return game.tries ? '🥳' : '😭😢🤮😭😢🤮'
 })
-
-const showDialog = ref<boolean>(true)
 </script>
-
-<style lang="scss" scoped></style>
