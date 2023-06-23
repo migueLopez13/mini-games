@@ -5,7 +5,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 const routes = [
   { path: '/proverbs', component: ProverbGameView },
   { path: '/word-search', component: WordSearchGameView },
-  { path: '/*', component: ProverbGameView }
+  { path: '/', component: ProverbGameView }
 ]
 
 export const router = createRouter({
