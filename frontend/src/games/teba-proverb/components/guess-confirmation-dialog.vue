@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import game from '../store.ts'
+import game from '@/games/teba-proverb/store.ts'
 
 function confirm() {
   game.setOpenConfirmSkip(false)

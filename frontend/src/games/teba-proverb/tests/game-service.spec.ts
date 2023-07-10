@@ -1,9 +1,9 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import * as gameService from '../game-service'
 import { mockProverb } from './mocks'
-import * as apiProverb from '../api'
-import game from '../store.ts'
-import * as utils from '../utils.ts'
+import * as gameService from '@/games/teba-proverb/game-service'
+import * as apiProverb from '@/games/teba-proverb/api'
+import game from '@/games/teba-proverb/store.ts'
+import * as utils from '@/games/teba-proverb/utils.ts'
 
 describe('game service', () => {
   beforeEach(() => {

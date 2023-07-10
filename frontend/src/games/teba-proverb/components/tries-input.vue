@@ -57,10 +57,10 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { guessTheSaying } from '../definitions.ts'
 import { useDisplay } from 'vuetify'
-import { userTry, isCorrectLetter } from '../game-service'
-import game from '../store.ts'
+import { guessTheSaying } from '@/games/teba-proverb/definitions.ts'
+import { userTry, isCorrectLetter } from '@/games/teba-proverb/game-service'
+import game from '@/games/teba-proverb/store.ts'
 
 const display = useDisplay()
 

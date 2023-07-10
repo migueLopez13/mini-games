@@ -27,7 +27,7 @@
 <script setup lang="ts">
 import { useDisplay } from 'vuetify'
 import ProverbWord from './proverb-word.vue'
-import game from '../store'
+import game from '@/games/teba-proverb/store'
 
 const display = useDisplay()
 </script>

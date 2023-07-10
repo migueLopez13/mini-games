@@ -35,7 +35,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { lettersRows } from '../definitions.ts'
+import { lettersRows } from '@/games/teba-proverb/definitions.ts'
 import { useDisplay } from 'vuetify'
 
 const display = useDisplay()

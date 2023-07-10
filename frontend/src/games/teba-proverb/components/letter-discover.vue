@@ -21,10 +21,10 @@
   </div>
 </template>
 <script setup lang="ts">
-import { infoText } from '../definitions.ts'
+import { infoText } from '@/games/teba-proverb/definitions.ts'
 import keyboard from './keyboard.vue'
-import { discoverLetter } from '../game-service'
-import game from '../store.ts'
+import { discoverLetter } from '@/games/teba-proverb/game-service'
+import game from '@/games/teba-proverb/store.ts'
 </script>
 
 <style scoped lang="scss">

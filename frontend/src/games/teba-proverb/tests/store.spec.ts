@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import game from '../store.ts'
+import game from '@/games/teba-proverb/store.ts'
 import {
   expectedMockMatrixWithMarks,
   mockFinishedMatrix,

@@ -17,8 +17,8 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { gameWinner, gameOver } from '../definitions'
-import game from '../store.ts'
+import { gameWinner, gameOver } from '@/games/teba-proverb/definitions'
+import game from '@/games/teba-proverb/store.ts'
 
 const message = computed(() => {
   return game.tries ? gameWinner : gameOver

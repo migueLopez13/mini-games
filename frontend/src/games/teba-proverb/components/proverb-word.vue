@@ -20,10 +20,10 @@
 </template>
 
 <script setup lang="ts">
-import { proverbWord } from '../definitions'
 import { useDisplay } from 'vuetify'
-import { marks, proverbLetter } from '../definitions'
-import game from '../store'
+import { proverbWord } from '@/games/teba-proverb/definitions'
+import { marks, proverbLetter } from '@/games/teba-proverb/definitions'
+import game from '@/games/teba-proverb/store'
 
 defineProps<{ word: proverbWord }>()
 const display = useDisplay()

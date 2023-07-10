@@ -1,4 +1,4 @@
-import { proverb, proverbWord } from '../definitions'
+import { proverb, proverbWord } from '@/games/teba-proverb/definitions'
 
 export const mockProverb: proverb = {
   value: 'test mock',

@@ -1,4 +1,4 @@
-import ProverbGameView from '../games/teba-proverb/game-view.vue'
+import ProverbGameView from '@/games/teba-proverb/game-view.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [

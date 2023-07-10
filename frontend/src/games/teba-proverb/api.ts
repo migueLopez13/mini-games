@@ -1,4 +1,4 @@
-import { supabase } from '../../plugins/supabase.ts'
+import { supabase } from '@/plugins/supabase.ts'
 import { proverb } from './definitions'
 
 export async function getProverb(): Promise<proverb> {

@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { computed } from 'vue'
 import { proverb, proverbWord, marks, proverbLetter } from './definitions.js'
 import { capitalize, removeAccentMarks } from './utils.js'
-import pinia from '../../plugins/pinia.ts'
+import pinia from '@/plugins/pinia.ts'
 import { useLocalStorage } from '@vueuse/core'
 
 const useProverbGameStore = defineStore('proverbGame', () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { capitalize, removeAccentMarks } from '../utils'
+import { capitalize, removeAccentMarks } from '@/games/teba-proverb/utils'
 
 describe('utils functions', () => {
   describe('remove accents marks', () => {
